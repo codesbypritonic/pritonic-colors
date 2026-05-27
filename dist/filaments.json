@@ -1,0 +1,12 @@
+[
+  {
+    "name": "Sky Blue",
+    "hex": "#69A8FF",
+    "type": "PLA",
+    "brand": "BambuLab",
+    "tone": "Mate",
+    "image1": "/images/bambulab-sky-blue-matte.jpg",
+    "image2": "/images/bambulab-sky-blue-roll.jpg",
+    "link": "https://bambulab.com/pla/sky-blue"
+  }
+]

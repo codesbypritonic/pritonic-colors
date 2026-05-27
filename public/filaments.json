@@ -1,12 +1,192 @@
 [
   {
-    "name": "Sky Blue",
-    "hex": "#69A8FF",
-    "type": "PLA",
-    "brand": "BambuLab",
+    "name": "Sesame Black",
+    "hex": "#2B2B2B",
+    "type": "PLA+",
+    "brand": "Pritonic",
     "tone": "Mate",
-    "image1": "/images/bambulab-sky-blue-matte.jpg",
-    "image2": "/images/bambulab-sky-blue-roll.jpg",
-    "link": "https://bambulab.com/pla/sky-blue"
+    "image1": "/images/sesame-black-matte.jpg",
+    "image2": "/images/sesame-black-roll.jpg",
+    "link": "https://www.pritonic.com"
+  },
+  {
+    "name": "Sakura Pink",
+    "hex": "#F6B7C8",
+    "type": "PLA+",
+    "brand": "Pritonic",
+    "tone": "Mate",
+    "image1": "/images/sakura-pink-matte.jpg",
+    "image2": "/images/sakura-pink-roll.jpg",
+    "link": "https://www.pritonic.com"
+  },
+  {
+    "name": "Peach Pink",
+    "hex": "#F6C1A7",
+    "type": "PLA+",
+    "brand": "Pritonic",
+    "tone": "Mate",
+    "image1": "/images/peach-pink-matte.jpg",
+    "image2": "/images/peach-pink-roll.jpg",
+    "link": "https://www.pritonic.com"
+  },
+  {
+    "name": "Mint Blue",
+    "hex": "#8FD6D1",
+    "type": "PLA+",
+    "brand": "Pritonic",
+    "tone": "Mate",
+    "image1": "/images/mint-blue-matte.jpg",
+    "image2": "/images/mint-blue-roll.jpg",
+    "link": "https://www.pritonic.com"
+  },
+  {
+    "name": "Matcha Green",
+    "hex": "#98A86F",
+    "type": "PLA+",
+    "brand": "Pritonic",
+    "tone": "Mate",
+    "image1": "/images/matcha-green-matte.jpg",
+    "image2": "/images/matcha-green-roll.jpg",
+    "link": "https://www.pritonic.com"
+  },
+  {
+    "name": "Malt Green",
+    "hex": "#7C8B5A",
+    "type": "PLA+",
+    "brand": "Pritonic",
+    "tone": "Mate",
+    "image1": "/images/malt-green-matte.jpg",
+    "image2": "/images/malt-green-roll.jpg",
+    "link": "https://www.pritonic.com"
+  },
+  {
+    "name": "Lemon Yellow",
+    "hex": "#F7E45C",
+    "type": "PLA+",
+    "brand": "Pritonic",
+    "tone": "Mate",
+    "image1": "/images/lemon-yellow-matte.jpg",
+    "image2": "/images/lemon-yellow-roll.jpg",
+    "link": "https://www.pritonic.com"
+  },
+  {
+    "name": "Latte Brown",
+    "hex": "#A67B5B",
+    "type": "PLA+",
+    "brand": "Pritonic",
+    "tone": "Mate",
+    "image1": "/images/latte-brown-matte.jpg",
+    "image2": "/images/latte-brown-roll.jpg",
+    "link": "https://www.pritonic.com"
+  },
+  {
+    "name": "Durian Yellow",
+    "hex": "#D9B85F",
+    "type": "PLA+",
+    "brand": "Pritonic",
+    "tone": "Mate",
+    "image1": "/images/durian-yellow-matte.jpg",
+    "image2": "/images/durian-yellow-roll.jpg",
+    "link": "https://www.pritonic.com"
+  },
+  {
+    "name": "Coconut Milk White",
+    "hex": "#F4F1E8",
+    "type": "PLA+",
+    "brand": "Pritonic",
+    "tone": "Mate",
+    "image1": "/images/coconut-milk-white-matte.jpg",
+    "image2": "/images/coconut-milk-white-roll.jpg",
+    "link": "https://www.pritonic.com"
+  },
+  {
+    "name": "Brown",
+    "hex": "#6B4A2E",
+    "type": "PLA+",
+    "brand": "Pritonic",
+    "tone": "Mate",
+    "image1": "/images/brown-matte.jpg",
+    "image2": "/images/brown-roll.jpg",
+    "link": "https://www.pritonic.com"
+  },
+  {
+    "name": "Ash Gray",
+    "hex": "#9A9A9A",
+    "type": "PLA+",
+    "brand": "Pritonic",
+    "tone": "Mate",
+    "image1": "/images/ash-gray-matte.jpg",
+    "image2": "/images/ash-gray-roll.jpg",
+    "link": "https://www.pritonic.com"
+  },
+  {
+    "name": "Basic Yellow",
+    "hex": "#FFD400",
+    "type": "PLA+",
+    "brand": "Pritonic",
+    "tone": "Brillante",
+    "image1": "/images/basic-yellow.jpg",
+    "image2": "/images/basic-yellow-roll.jpg",
+    "link": "https://www.pritonic.com"
+  },
+  {
+    "name": "Basic White",
+    "hex": "#FFFFFF",
+    "type": "PLA+",
+    "brand": "Pritonic",
+    "tone": "Brillante",
+    "image1": "/images/basic-white.jpg",
+    "image2": "/images/basic-white-roll.jpg",
+    "link": "https://www.pritonic.com"
+  },
+  {
+    "name": "Basic Violet",
+    "hex": "#7D4BC6",
+    "type": "PLA+",
+    "brand": "Pritonic",
+    "tone": "Brillante",
+    "image1": "/images/basic-violet.jpg",
+    "image2": "/images/basic-violet-roll.jpg",
+    "link": "https://www.pritonic.com"
+  },
+  {
+    "name": "Basic Sky Blue",
+    "hex": "#69A8FF",
+    "type": "PLA+",
+    "brand": "Pritonic",
+    "tone": "Brillante",
+    "image1": "/images/basic-sky-blue.jpg",
+    "image2": "/images/basic-sky-blue-roll.jpg",
+    "link": "https://www.pritonic.com"
+  },
+  {
+    "name": "Basic Red",
+    "hex": "#D72631",
+    "type": "PLA+",
+    "brand": "Pritonic",
+    "tone": "Brillante",
+    "image1": "/images/basic-red.jpg",
+    "image2": "/images/basic-red-roll.jpg",
+    "link": "https://www.pritonic.com"
+  },
+  {
+    "name": "Basic Pink",
+    "hex": "#F58BB0",
+    "type": "PLA+",
+    "brand": "Pritonic",
+    "tone": "Brillante",
+    "image1": "/images/basic-pink.jpg",
+    "image2": "/images/basic-pink-roll.jpg",
+    "link": "https://www.pritonic.com"
+  },
+  {
+    "name": "Basic Pine Green",
+    "hex": "#2E5E4E",
+    "type": "PLA+",
+    "brand": "Pritonic",
+    "tone": "Brillante",
+    "image1": "/images/basic-pine-green.jpg",
+    "image2": "/images/basic-pine-green-roll.jpg",
+    "link": "https://www.pritonic.com"
   }
 ]
