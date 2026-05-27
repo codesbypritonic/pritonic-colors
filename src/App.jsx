@@ -14,7 +14,7 @@ function App() {
 
   // Cargar datos
   useEffect(() => {
-    fetch('/filaments.json')
+      fetch(`${import.meta.env.BASE_URL}filaments.json`)
       .then(response => response.json())
       .then(data => {
         setFilaments(data)
@@ -181,8 +181,9 @@ function App() {
     setShowAllColors(true)
   }
 
-  const sortedByHex = [...filaments].sort((a, b) => a.hex.localeCompare(b.hex))
-
+const sortedByHex = [...filaments].sort((a, b) =>
+  parseInt(a.hex.slice(1), 16) - parseInt(b.hex.slice(1), 16)
+)
   if (isLoading) {
     return (
       <div style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', background: '#f3f4f6' }}>
