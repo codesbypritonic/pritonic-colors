@@ -1,274 +1,1082 @@
 [
   {
-    "name": "Sesame Black",
-    "hex": "#2B2B2B",
-    "type": "PLA+",
+    "name": "HT-PLA blanco",
+    "hex": "#F3F3F1",
+    "type": "PLA",
+    "brand": "Polymaker",
+    "tone": "Brillante",
+    "link": "https://www.pritonic.com/products/894/polymaker-ht-pla-175mm-filamento-pla-de-alta-temperatura-resistente-hasta-80-c",
+    "image1": "images/ht-pla-blanco.jpg",
+    "image2": "images/ht-pla-blanco-roll.jpg"
+  },
+  {
+    "name": "HT-PLA negro",
+    "hex": "#070707",
+    "type": "PLA",
+    "brand": "Polymaker",
+    "tone": "Brillante",
+    "link": "https://www.pritonic.com/products/894/polymaker-ht-pla-175mm-filamento-pla-de-alta-temperatura-resistente-hasta-80-c",
+    "image1": "images/ht-pla-negro.jpg",
+    "image2": "images/ht-pla-negro-roll.jpg"
+  },
+  {
+    "name": "HT-PLA gris",
+    "hex": "#6C7477",
+    "type": "PLA",
+    "brand": "Polymaker",
+    "tone": "Brillante",
+    "link": "https://www.pritonic.com/products/894/polymaker-ht-pla-175mm-filamento-pla-de-alta-temperatura-resistente-hasta-80-c",
+    "image1": "images/ht-pla-gris.jpg",
+    "image2": "images/ht-pla-gris-roll.jpg"
+  },
+  {
+    "name": "HT-PLA azul",
+    "hex": "#0F5EA0",
+    "type": "PLA",
+    "brand": "Polymaker",
+    "tone": "Brillante",
+    "link": "https://www.pritonic.com/products/894/polymaker-ht-pla-175mm-filamento-pla-de-alta-temperatura-resistente-hasta-80-c",
+    "image1": "images/ht-pla-azul.jpg",
+    "image2": "images/ht-pla-azul-roll.jpg"
+  },
+  {
+    "name": "HT-PLA rojo",
+    "hex": "#AC0200",
+    "type": "PLA",
+    "brand": "Polymaker",
+    "tone": "Brillante",
+    "link": "https://www.pritonic.com/products/894/polymaker-ht-pla-175mm-filamento-pla-de-alta-temperatura-resistente-hasta-80-c",
+    "image1": "images/ht-pla-rojo.jpg",
+    "image2": "images/ht-pla-rojo-roll.jpg"
+  },
+  {
+    "name": "PLA Satin blanco",
+    "hex": "#F5F0EC",
+    "type": "PLA",
+    "brand": "Polymaker",
+    "tone": "Brillante",
+    "link": "https://www.pritonic.com/products/824/panchroma-satin-pla-filamento-pla-satinado-premium-facil-de-imprimir",
+    "image1": "images/pla-satin-blanco.jpg",
+    "image2": "images/pla-satin-blanco-roll.jpg"
+  },
+  {
+    "name": "PLA Satin negro",
+    "hex": "#302E30",
+    "type": "PLA",
+    "brand": "Polymaker",
+    "tone": "Brillante",
+    "link": "https://www.pritonic.com/products/824/panchroma-satin-pla-filamento-pla-satinado-premium-facil-de-imprimir",
+    "image1": "images/pla-satin-negro.jpg",
+    "image2": "images/pla-satin-negro-roll.jpg"
+  },
+  {
+    "name": "PLA Matte verde claro militar",
+    "hex": "#AB8C02",
+    "type": "PLA",
+    "brand": "Polymaker",
+    "tone": "Mate",
+    "link": "https://www.pritonic.com/products/655/pla-polymaker-panchroma-matte-army-pla-175-mm-1-kg-filamento-para-impresion-3d",
+    "image1": "images/pla-matte-verde-claro-militar.jpg",
+    "image2": "images/pla-matte-verde-claro-militar-roll.jpg"
+  },
+  {
+    "name": "PLA Matte cafe militar",
+    "hex": "#795A4D",
+    "type": "PLA",
+    "brand": "Polymaker",
+    "tone": "Mate",
+    "link": "https://www.pritonic.com/products/655/pla-polymaker-panchroma-matte-army-pla-175-mm-1-kg-filamento-para-impresion-3d",
+    "image1": "images/pla-matte-cafe-militar.jpg",
+    "image2": "images/pla-matte-cafe-militar-roll.jpg"
+  },
+  {
+    "name": "PLA Matte beige militar",
+    "hex": "#DBBAA5",
+    "type": "PLA",
+    "brand": "Polymaker",
+    "tone": "Mate",
+    "link": "https://www.pritonic.com/products/655/pla-polymaker-panchroma-matte-army-pla-175-mm-1-kg-filamento-para-impresion-3d",
+    "image1": "images/pla-matte-beige-militar.jpg",
+    "image2": "images/pla-matte-beige-militar-roll.jpg"
+  },
+  {
+    "name": "PLA Matte morado army",
+    "hex": "#36364A",
+    "type": "PLA",
+    "brand": "Polymaker",
+    "tone": "Mate",
+    "link": "https://www.pritonic.com/products/655/pla-polymaker-panchroma-matte-army-pla-175-mm-1-kg-filamento-para-impresion-3d",
+    "image1": "images/pla-matte-morado-army.jpg",
+    "image2": "images/pla-matte-morado-army-roll.jpg"
+  },
+  {
+    "name": "PLA Matte rojo militar",
+    "hex": "#BF312E",
+    "type": "PLA",
+    "brand": "Polymaker",
+    "tone": "Mate",
+    "link": "https://www.pritonic.com/products/655/pla-polymaker-panchroma-matte-army-pla-175-mm-1-kg-filamento-para-impresion-3d",
+    "image1": "images/pla-matte-rojo-militar.jpg",
+    "image2": "images/pla-matte-rojo-militar-roll.jpg"
+  },
+  {
+    "name": "PLA Matte verde oscuro militar",
+    "hex": "#5F6244",
+    "type": "PLA",
+    "brand": "Polymaker",
+    "tone": "Mate",
+    "link": "https://www.pritonic.com/products/655/pla-polymaker-panchroma-matte-army-pla-175-mm-1-kg-filamento-para-impresion-3d",
+    "image1": "images/pla-matte-verde-oscuro-militar.jpg",
+    "image2": "images/pla-matte-verde-oscuro-militar-roll.jpg"
+  },
+  {
+    "name": "PLA Matte azul militar",
+    "hex": "#2E4462",
+    "type": "PLA",
+    "brand": "Polymaker",
+    "tone": "Brillante",
+    "link": "https://www.pritonic.com/products/655/pla-polymaker-panchroma-matte-army-pla-175-mm-1-kg-filamento-para-impresion-3d",
+    "image1": "images/pla-matte-azul-militar.jpg",
+    "image2": "images/pla-matte-azul-militar-roll.jpg"
+  },
+  {
+    "name": "PLA Glow azul luminoso",
+    "hex": "#F3EADB",
+    "type": "PLA",
+    "brand": "Polymaker",
+    "tone": "Brillante",
+    "link": "https://www.pritonic.com/products/652/pla-panchroma-glow-pla-175-mm-polymaker-brilla-en-la-oscuridad-alta-calidad-y-facil-impresion",
+    "image1": "images/pla-glow-azul-luminoso.jpg",
+    "image2": "images/pla-glow-azul-luminoso-roll.jpg"
+  },
+  {
+    "name": "PLA Glow verde luminoso",
+    "hex": "#F2EADB",
+    "type": "PLA",
+    "brand": "Polymaker",
+    "tone": "Mate",
+    "link": "https://www.pritonic.com/products/652/pla-panchroma-glow-pla-175-mm-polymaker-brilla-en-la-oscuridad-alta-calidad-y-facil-impresion",
+    "image1": "images/pla-glow-verde-luminoso.jpg",
+    "image2": "images/pla-glow-verde-luminoso-roll.jpg"
+  },
+  {
+    "name": "PLA Glow verde que brilla en oscuridad",
+    "hex": "#BFEB8C",
+    "type": "PLA",
+    "brand": "Polymaker",
+    "tone": "Mate",
+    "link": "https://www.pritonic.com/products/652/pla-panchroma-glow-pla-175-mm-polymaker-brilla-en-la-oscuridad-alta-calidad-y-facil-impresion",
+    "image1": "images/pla-glow-verde-que-brilla-en-oscuridad.jpg",
+    "image2": "images/pla-glow-verde-que-brilla-en-oscuridad-roll.jpg"
+  },
+  {
+    "name": "PLA Glow naranja neón",
+    "hex": "#FF7800",
+    "type": "PLA",
+    "brand": "Polymaker",
+    "tone": "Mate",
+    "link": "https://www.pritonic.com/products/652/pla-panchroma-glow-pla-175-mm-polymaker-brilla-en-la-oscuridad-alta-calidad-y-facil-impresion",
+    "image1": "images/pla-glow-naranja-neon.jpg",
+    "image2": "images/pla-glow-naranja-neon-roll.jpg"
+  },
+  {
+    "name": "PLA Matte blanco apagado",
+    "hex": "#BBADA4",
+    "type": "PLA",
+    "brand": "Polymaker",
+    "tone": "Mate",
+    "link": "https://www.pritonic.com/products/649/polymaker-panchroma-matte-pla-filament-175mm-1kg-pla-mate-de-acabado-profesional-para-impresion-3d",
+    "image1": "images/pla-matte-blanco-apagado.jpg",
+    "image2": "images/pla-matte-blanco-apagado-roll.jpg"
+  },
+  {
+    "name": "PLA Matte Café madera",
+    "hex": "#AB7449",
+    "type": "PLA",
+    "brand": "Polymaker",
+    "tone": "Mate",
+    "link": "https://www.pritonic.com/products/649/polymaker-panchroma-matte-pla-filament-175mm-1kg-pla-mate-de-acabado-profesional-para-impresion-3d",
+    "image1": "images/pla-matte-cafe-madera.jpg",
+    "image2": "images/pla-matte-cafe-madera-roll.jpg"
+  },
+  {
+    "name": "PLA Matte Azul cielo",
+    "hex": "#1AC5FC",
+    "type": "PLA",
+    "brand": "Polymaker",
+    "tone": "Mate",
+    "link": "https://www.pritonic.com/products/649/polymaker-panchroma-matte-pla-filament-175mm-1kg-pla-mate-de-acabado-profesional-para-impresion-3d",
+    "image1": "images/pla-matte-azul-cielo.jpg",
+    "image2": "images/pla-matte-azul-cielo-roll.jpg"
+  },
+  {
+    "name": "PLA Matte Morado Lavanda",
+    "hex": "#9572BF",
+    "type": "PLA",
+    "brand": "Polymaker",
+    "tone": "Mate",
+    "link": "https://www.pritonic.com/products/649/polymaker-panchroma-matte-pla-filament-175mm-1kg-pla-mate-de-acabado-profesional-para-impresion-3d",
+    "image1": "images/pla-matte-morado-lavanda.jpg",
+    "image2": "images/pla-matte-morado-lavanda-roll.jpg"
+  },
+  {
+    "name": "PLA Matte Ash Grey",
+    "hex": "#485155",
+    "type": "PLA",
+    "brand": "Polymaker",
+    "tone": "Mate",
+    "link": "https://www.pritonic.com/products/649/polymaker-panchroma-matte-pla-filament-175mm-1kg-pla-mate-de-acabado-profesional-para-impresion-3d",
+    "image1": "images/pla-matte-ash-grey.jpg",
+    "image2": "images/pla-matte-ash-grey-roll.jpg"
+  },
+  {
+    "name": "PLA Matte Azul Apagado",
+    "hex": "#5F778E",
+    "type": "PLA",
+    "brand": "Polymaker",
+    "tone": "Mate",
+    "link": "https://www.pritonic.com/products/649/polymaker-panchroma-matte-pla-filament-175mm-1kg-pla-mate-de-acabado-profesional-para-impresion-3d",
+    "image1": "images/pla-matte-azul-apagado.jpg",
+    "image2": "images/pla-matte-azul-apagado-roll.jpg"
+  },
+  {
+    "name": "PLA Matte índigo eléctrico",
+    "hex": "#6858A9",
+    "type": "PLA",
+    "brand": "Polymaker",
+    "tone": "Mate",
+    "link": "https://www.pritonic.com/products/649/polymaker-panchroma-matte-pla-filament-175mm-1kg-pla-mate-de-acabado-profesional-para-impresion-3d",
+    "image1": "images/pla-matte-indigo-electrico.jpg",
+    "image2": "images/pla-matte-indigo-electrico-roll.jpg"
+  },
+  {
+    "name": "PLA Matte Banana pastel",
+    "hex": "#F7D475",
+    "type": "PLA",
+    "brand": "Polymaker",
+    "tone": "Mate",
+    "link": "https://www.pritonic.com/products/649/polymaker-panchroma-matte-pla-filament-175mm-1kg-pla-mate-de-acabado-profesional-para-impresion-3d",
+    "image1": "images/pla-matte-banana-pastel.jpg",
+    "image2": "images/pla-matte-banana-pastel-roll.jpg"
+  },
+  {
+    "name": "PLA Matte Maní pastel",
+    "hex": "#BF9573",
+    "type": "PLA",
+    "brand": "Polymaker",
+    "tone": "Mate",
+    "link": "https://www.pritonic.com/products/649/polymaker-panchroma-matte-pla-filament-175mm-1kg-pla-mate-de-acabado-profesional-para-impresion-3d",
+    "image1": "images/pla-matte-mani-pastel.jpg",
+    "image2": "images/pla-matte-mani-pastel-roll.jpg"
+  },
+  {
+    "name": "PLA Matte Azul safiro",
+    "hex": "#0163A6",
+    "type": "PLA",
+    "brand": "Polymaker",
+    "tone": "Mate",
+    "link": "https://www.pritonic.com/products/649/polymaker-panchroma-matte-pla-filament-175mm-1kg-pla-mate-de-acabado-profesional-para-impresion-3d",
+    "image1": "images/pla-matte-azul-safiro.jpg",
+    "image2": "images/pla-matte-azul-safiro-roll.jpg"
+  },
+  {
+    "name": "PLA Matte Amarillo Savana",
+    "hex": "#F3C432",
+    "type": "PLA",
+    "brand": "Polymaker",
+    "tone": "Mate",
+    "link": "https://www.pritonic.com/products/649/polymaker-panchroma-matte-pla-filament-175mm-1kg-pla-mate-de-acabado-profesional-para-impresion-3d",
+    "image1": "images/pla-matte-amarillo-savana.jpg",
+    "image2": "images/pla-matte-amarillo-savana-roll.jpg"
+  },
+  {
+    "name": "PLA Matte Naranja atardecer",
+    "hex": "#F88B17",
+    "type": "PLA",
+    "brand": "Polymaker",
+    "tone": "Mate",
+    "link": "https://www.pritonic.com/products/649/polymaker-panchroma-matte-pla-filament-175mm-1kg-pla-mate-de-acabado-profesional-para-impresion-3d",
+    "image1": "images/pla-matte-naranja-atardecer.jpg",
+    "image2": "images/pla-matte-naranja-atardecer-roll.jpg"
+  },
+  {
+    "name": "PLA Matte Verde ártico",
+    "hex": "#61BCC3",
+    "type": "PLA",
+    "brand": "Polymaker",
+    "tone": "Mate",
+    "link": "https://www.pritonic.com/products/649/polymaker-panchroma-matte-pla-filament-175mm-1kg-pla-mate-de-acabado-profesional-para-impresion-3d",
+    "image1": "images/pla-matte-verde-artico.jpg",
+    "image2": "images/pla-matte-verde-artico-roll.jpg"
+  },
+  {
+    "name": "PLA Matte Confite pastel",
+    "hex": "#F0D6D9",
+    "type": "PLA",
+    "brand": "Polymaker",
+    "tone": "Mate",
+    "link": "https://www.pritonic.com/products/649/polymaker-panchroma-matte-pla-filament-175mm-1kg-pla-mate-de-acabado-profesional-para-impresion-3d",
+    "image1": "images/pla-matte-confite-pastel.jpg",
+    "image2": "images/pla-matte-confite-pastel-roll.jpg"
+  },
+  {
+    "name": "PLA Matte Hielo pastel",
+    "hex": "#A4D0DF",
+    "type": "PLA",
+    "brand": "Polymaker",
+    "tone": "Mate",
+    "link": "https://www.pritonic.com/products/649/polymaker-panchroma-matte-pla-filament-175mm-1kg-pla-mate-de-acabado-profesional-para-impresion-3d",
+    "image1": "images/pla-matte-hielo-pastel.jpg",
+    "image2": "images/pla-matte-hielo-pastel-roll.jpg"
+  },
+  {
+    "name": "PLA Matte Menta pastel",
+    "hex": "#D2DEBB",
+    "type": "PLA",
+    "brand": "Polymaker",
+    "tone": "Mate",
+    "link": "https://www.pritonic.com/products/649/polymaker-panchroma-matte-pla-filament-175mm-1kg-pla-mate-de-acabado-profesional-para-impresion-3d",
+    "image1": "images/pla-matte-menta-pastel.jpg",
+    "image2": "images/pla-matte-menta-pastel-roll.jpg"
+  },
+  {
+    "name": "PLA Matte Durazno pastel",
+    "hex": "#F6BF8B",
+    "type": "PLA",
+    "brand": "Polymaker",
+    "tone": "Mate",
+    "link": "https://www.pritonic.com/products/649/polymaker-panchroma-matte-pla-filament-175mm-1kg-pla-mate-de-acabado-profesional-para-impresion-3d",
+    "image1": "images/pla-matte-durazno-pastel.jpg",
+    "image2": "images/pla-matte-durazno-pastel-roll.jpg"
+  },
+  {
+    "name": "PLA Matte Rosa sakura",
+    "hex": "#EAADBD",
+    "type": "PLA",
+    "brand": "Polymaker",
+    "tone": "Mate",
+    "link": "https://www.pritonic.com/products/649/polymaker-panchroma-matte-pla-filament-175mm-1kg-pla-mate-de-acabado-profesional-para-impresion-3d",
+    "image1": "images/pla-matte-rosa-sakura.jpg",
+    "image2": "images/pla-matte-rosa-sakura-roll.jpg"
+  },
+  {
+    "name": "PLA Matte Rojo apagado",
+    "hex": "#D84B2E",
+    "type": "PLA",
+    "brand": "Polymaker",
+    "tone": "Mate",
+    "link": "https://www.pritonic.com/products/649/polymaker-panchroma-matte-pla-filament-175mm-1kg-pla-mate-de-acabado-profesional-para-impresion-3d",
+    "image1": "images/pla-matte-rojo-apagado.jpg",
+    "image2": "images/pla-matte-rojo-apagado-roll.jpg"
+  },
+  {
+    "name": "PLA Matte Morado apagado",
+    "hex": "#7C5C78",
+    "type": "PLA",
+    "brand": "Polymaker",
+    "tone": "Mate",
+    "link": "https://www.pritonic.com/products/649/polymaker-panchroma-matte-pla-filament-175mm-1kg-pla-mate-de-acabado-profesional-para-impresion-3d",
+    "image1": "images/pla-matte-morado-apagado.jpg",
+    "image2": "images/pla-matte-morado-apagado-roll.jpg"
+  },
+  {
+    "name": "PLA Matte Verde apagado",
+    "hex": "#777E71",
+    "type": "PLA",
+    "brand": "Polymaker",
+    "tone": "Mate",
+    "link": "https://www.pritonic.com/products/649/polymaker-panchroma-matte-pla-filament-175mm-1kg-pla-mate-de-acabado-profesional-para-impresion-3d",
+    "image1": "images/pla-matte-verde-apagado.jpg",
+    "image2": "images/pla-matte-verde-apagado-roll.jpg"
+  },
+  {
+    "name": "PLA Matte Rojo lava",
+    "hex": "#ED2F2E",
+    "type": "PLA",
+    "brand": "Polymaker",
+    "tone": "Mate",
+    "link": "https://www.pritonic.com/products/649/polymaker-panchroma-matte-pla-filament-175mm-1kg-pla-mate-de-acabado-profesional-para-impresion-3d",
+    "image1": "images/pla-matte-rojo-lava.jpg",
+    "image2": "images/pla-matte-rojo-lava-roll.jpg"
+  },
+  {
+    "name": "PLA Matte Gris fósil",
+    "hex": "#8A8C94",
+    "type": "PLA",
+    "brand": "Polymaker",
+    "tone": "Mate",
+    "link": "https://www.pritonic.com/products/649/polymaker-panchroma-matte-pla-filament-175mm-1kg-pla-mate-de-acabado-profesional-para-impresion-3d",
+    "image1": "images/pla-matte-gris-fosil.jpg",
+    "image2": "images/pla-matte-gris-fosil-roll.jpg"
+  },
+  {
+    "name": "PLA Matte Verde bosque",
+    "hex": "#60AD70",
+    "type": "PLA",
+    "brand": "Polymaker",
+    "tone": "Mate",
+    "link": "https://www.pritonic.com/products/649/polymaker-panchroma-matte-pla-filament-175mm-1kg-pla-mate-de-acabado-profesional-para-impresion-3d",
+    "image1": "images/pla-matte-verde-bosque.jpg",
+    "image2": "images/pla-matte-verde-bosque-roll.jpg"
+  },
+  {
+    "name": "PLA Matte Blanco algodón",
+    "hex": "#F4EFEB",
+    "type": "PLA",
+    "brand": "Polymaker",
+    "tone": "Mate",
+    "link": "https://www.pritonic.com/products/649/polymaker-panchroma-matte-pla-filament-175mm-1kg-pla-mate-de-acabado-profesional-para-impresion-3d",
+    "image1": "images/pla-matte-blanco-algodon.jpg",
+    "image2": "images/pla-matte-blanco-algodon-roll.jpg"
+  },
+  {
+    "name": "PLA Matte Negro carbón",
+    "hex": "#2F2E30",
+    "type": "PLA",
+    "brand": "Polymaker",
+    "tone": "Mate",
+    "link": "https://www.pritonic.com/products/649/polymaker-panchroma-matte-pla-filament-175mm-1kg-pla-mate-de-acabado-profesional-para-impresion-3d",
+    "image1": "images/pla-matte-negro-carbon.jpg",
+    "image2": "images/pla-matte-negro-carbon-roll.jpg"
+  },
+  {
+    "name": "PLA Matte Marrón Tierra",
+    "hex": "#7C594A",
+    "type": "PLA",
+    "brand": "Polymaker",
+    "tone": "Mate",
+    "link": "https://www.pritonic.com/products/649/polymaker-panchroma-matte-pla-filament-175mm-1kg-pla-mate-de-acabado-profesional-para-impresion-3d",
+    "image1": "images/pla-matte-marron-tierra.jpg",
+    "image2": "images/pla-matte-marron-tierra-roll.jpg"
+  },
+  {
+    "name": "PLA Polylite Silk Seda Dorado Corona",
+    "hex": "#C49449, #BCC2C8",
+    "type": "PLA",
+    "brand": "Polymaker",
+    "tone": "Seda",
+    "link": "https://www.pritonic.com/products/609/polylite-color-dual",
+    "image1": "images/pla-polylite-silk-seda-dorado-corona.jpg",
+    "image2": "images/pla-polylite-silk-seda-dorado-corona-roll.jpg"
+  },
+  {
+    "name": "PLA Polylite Silk Seda Camaleón (Amarillo Azul)",
+    "hex": "#EEC810, #4999C9",
+    "type": "PLA",
+    "brand": "Polymaker",
+    "tone": "Seda",
+    "link": "https://www.pritonic.com/products/609/polylite-color-dual",
+    "image1": "images/pla-polylite-silk-seda-camaleon-amarillo-azul.jpg",
+    "image2": "images/pla-polylite-silk-seda-camaleon-amarillo-azul-roll.jpg"
+  },
+  {
+    "name": "PLA Polylite Silk Seda Beluga (Plata Azul)",
+    "hex": "#BCC2C8, #4999C9",
+    "type": "PLA",
+    "brand": "Polymaker",
+    "tone": "Seda",
+    "link": "https://www.pritonic.com/products/609/polylite-color-dual",
+    "image1": "images/pla-polylite-silk-seda-beluga-plata-azul.jpg",
+    "image2": "images/pla-polylite-silk-seda-beluga-plata-azul-roll.jpg"
+  },
+  {
+    "name": "PLA Polylite Silk Seda Mar Caribe (Azul Verde)",
+    "hex": "#4999C9, #55B687",
+    "type": "PLA",
+    "brand": "Polymaker",
+    "tone": "Seda",
+    "link": "https://www.pritonic.com/products/609/polylite-color-dual",
+    "image1": "images/pla-polylite-silk-seda-mar-caribe-azul-verde.jpg",
+    "image2": "images/pla-polylite-silk-seda-mar-caribe-azul-verde-roll.jpg"
+  },
+  {
+    "name": "PLA Polylite Silk Seda Verde Jadeita",
+    "hex": "#55B687, #85898B",
+    "type": "PLA",
+    "brand": "Polymaker",
+    "tone": "Seda",
+    "link": "https://www.pritonic.com/products/609/polylite-color-dual",
+    "image1": "images/pla-polylite-silk-seda-verde-jadeita.jpg",
+    "image2": "images/pla-polylite-silk-seda-verde-jadeita-roll.jpg"
+  },
+  {
+    "name": "PLA Pro Negro",
+    "hex": "#161619",
+    "type": "PLA",
+    "brand": "Polymaker",
+    "tone": "Brillante",
+    "link": "https://www.pritonic.com/products/458/polymaker-polylite-pla-pro-filament-175mm-1kg-pla-de-alta-resistencia-y-rigidez-profesional",
+    "image1": "images/pla-pro-negro.jpg",
+    "image2": "images/pla-pro-negro-roll.jpg"
+  },
+  {
+    "name": "PLA Pro Magenta",
+    "hex": "#EF2F64",
+    "type": "PLA",
+    "brand": "Polymaker",
+    "tone": "Brillante",
+    "link": "https://www.pritonic.com/products/458/polymaker-polylite-pla-pro-filament-175mm-1kg-pla-de-alta-resistencia-y-rigidez-profesional",
+    "image1": "images/pla-pro-magenta.jpg",
+    "image2": "images/pla-pro-magenta-roll.jpg"
+  },
+  {
+    "name": "PLA Pro Morado oscuro",
+    "hex": "#2C1C30",
+    "type": "PLA",
+    "brand": "Polymaker",
+    "tone": "Brillante",
+    "link": "https://www.pritonic.com/products/458/polymaker-polylite-pla-pro-filament-175mm-1kg-pla-de-alta-resistencia-y-rigidez-profesional",
+    "image1": "images/pla-pro-morado-oscuro.jpg",
+    "image2": "images/pla-pro-morado-oscuro-roll.jpg"
+  },
+  {
+    "name": "PLA Pro Gris oscuro",
+    "hex": "#545859",
+    "type": "PLA",
+    "brand": "Polymaker",
+    "tone": "Brillante",
+    "link": "https://www.pritonic.com/products/458/polymaker-polylite-pla-pro-filament-175mm-1kg-pla-de-alta-resistencia-y-rigidez-profesional",
+    "image1": "images/pla-pro-gris-oscuro.jpg",
+    "image2": "images/pla-pro-gris-oscuro-roll.jpg"
+  },
+  {
+    "name": "PLA Pro Rosado",
+    "hex": "#EE92AA",
+    "type": "PLA",
+    "brand": "Polymaker",
+    "tone": "Brillante",
+    "link": "https://www.pritonic.com/products/458/polymaker-polylite-pla-pro-filament-175mm-1kg-pla-de-alta-resistencia-y-rigidez-profesional",
+    "image1": "images/pla-pro-rosado.jpg",
+    "image2": "images/pla-pro-rosado-roll.jpg"
+  },
+  {
+    "name": "PLA Pro Beige militar",
+    "hex": "#C28D5E",
+    "type": "PLA",
+    "brand": "Polymaker",
+    "tone": "Brillante",
+    "link": "https://www.pritonic.com/products/458/polymaker-polylite-pla-pro-filament-175mm-1kg-pla-de-alta-resistencia-y-rigidez-profesional",
+    "image1": "images/pla-pro-beige-militar.jpg",
+    "image2": "images/pla-pro-beige-militar-roll.jpg"
+  },
+  {
+    "name": "PLA Pro Verde Azulado Ártico",
+    "hex": "#5FC7CF",
+    "type": "PLA",
+    "brand": "Polymaker",
+    "tone": "Brillante",
+    "link": "https://www.pritonic.com/products/458/polymaker-polylite-pla-pro-filament-175mm-1kg-pla-de-alta-resistencia-y-rigidez-profesional",
+    "image1": "images/pla-pro-verde-azulado-artico.jpg",
+    "image2": "images/pla-pro-verde-azulado-artico-roll.jpg"
+  },
+  {
+    "name": "PLA Pro Café",
+    "hex": "#634232",
+    "type": "PLA",
+    "brand": "Polymaker",
+    "tone": "Brillante",
+    "link": "https://www.pritonic.com/products/458/polymaker-polylite-pla-pro-filament-175mm-1kg-pla-de-alta-resistencia-y-rigidez-profesional",
+    "image1": "images/pla-pro-cafe.jpg",
+    "image2": "images/pla-pro-cafe-roll.jpg"
+  },
+  {
+    "name": "PLA Pro Morado",
+    "hex": "#6547A5",
+    "type": "PLA",
+    "brand": "Polymaker",
+    "tone": "Brillante",
+    "link": "https://www.pritonic.com/products/458/polymaker-polylite-pla-pro-filament-175mm-1kg-pla-de-alta-resistencia-y-rigidez-profesional",
+    "image1": "images/pla-pro-morado.jpg",
+    "image2": "images/pla-pro-morado-roll.jpg"
+  },
+  {
+    "name": "PLA Pro Amarillo",
+    "hex": "#F0AB01",
+    "type": "PLA",
+    "brand": "Polymaker",
+    "tone": "Brillante",
+    "link": "https://www.pritonic.com/products/458/polymaker-polylite-pla-pro-filament-175mm-1kg-pla-de-alta-resistencia-y-rigidez-profesional",
+    "image1": "images/pla-pro-amarillo.jpg",
+    "image2": "images/pla-pro-amarillo-roll.jpg"
+  },
+  {
+    "name": "PLA Pro Azul",
+    "hex": "#013276",
+    "type": "PLA",
+    "brand": "Polymaker",
+    "tone": "Brillante",
+    "link": "https://www.pritonic.com/products/458/polymaker-polylite-pla-pro-filament-175mm-1kg-pla-de-alta-resistencia-y-rigidez-profesional",
+    "image1": "images/pla-pro-azul.jpg",
+    "image2": "images/pla-pro-azul-roll.jpg"
+  },
+  {
+    "name": "PLA Pro Blanco frío",
+    "hex": "#013276",
+    "type": "PLA",
+    "brand": "Polymaker",
+    "tone": "Brillante",
+    "link": "https://www.pritonic.com/products/458/polymaker-polylite-pla-pro-filament-175mm-1kg-pla-de-alta-resistencia-y-rigidez-profesional",
+    "image1": "images/pla-pro-blanco-frio.jpg",
+    "image2": "images/pla-pro-blanco-frio-roll.jpg"
+  },
+  {
+    "name": "PLA Pro Verde",
+    "hex": "#31A45F",
+    "type": "PLA",
+    "brand": "Polymaker",
+    "tone": "Brillante",
+    "link": "https://www.pritonic.com/products/458/polymaker-polylite-pla-pro-filament-175mm-1kg-pla-de-alta-resistencia-y-rigidez-profesional",
+    "image1": "images/pla-pro-verde.jpg",
+    "image2": "images/pla-pro-verde-roll.jpg"
+  },
+  {
+    "name": "PLA Pro Gris",
+    "hex": "#31A45F",
+    "type": "PLA",
+    "brand": "Polymaker",
+    "tone": "Brillante",
+    "link": "https://www.pritonic.com/products/458/polymaker-polylite-pla-pro-filament-175mm-1kg-pla-de-alta-resistencia-y-rigidez-profesional",
+    "image1": "images/pla-pro-gris.jpg",
+    "image2": "images/pla-pro-gris-roll.jpg"
+  },
+  {
+    "name": "PLA Pro Naranja",
+    "hex": "#31A45F",
+    "type": "PLA",
+    "brand": "Polymaker",
+    "tone": "Brillante",
+    "link": "https://www.pritonic.com/products/458/polymaker-polylite-pla-pro-filament-175mm-1kg-pla-de-alta-resistencia-y-rigidez-profesional",
+    "image1": "images/pla-pro-naranja.jpg",
+    "image2": "images/pla-pro-naranja-roll.jpg"
+  },
+  {
+    "name": "PLA Pro Rojo",
+    "hex": "#31A45F",
+    "type": "PLA",
+    "brand": "Polymaker",
+    "tone": "Brillante",
+    "link": "https://www.pritonic.com/products/458/polymaker-polylite-pla-pro-filament-175mm-1kg-pla-de-alta-resistencia-y-rigidez-profesional",
+    "image1": "images/pla-pro-rojo.jpg",
+    "image2": "images/pla-pro-rojo-roll.jpg"
+  },
+  {
+    "name": "PLA Pro Blanco",
+    "hex": "#31A45F",
+    "type": "PLA",
+    "brand": "Polymaker",
+    "tone": "Brillante",
+    "link": "https://www.pritonic.com/products/458/polymaker-polylite-pla-pro-filament-175mm-1kg-pla-de-alta-resistencia-y-rigidez-profesional",
+    "image1": "images/pla-pro-blanco.jpg",
+    "image2": "images/pla-pro-blanco-roll.jpg"
+  },
+  {
+    "name": "PLA Mármol Azul metálico",
+    "hex": "#2C3449",
+    "type": "PLA",
+    "brand": "Polymaker",
+    "tone": "Brillante",
+    "link": "https://www.pritonic.com/products/455/panchroma-marmol",
+    "image1": "images/pla-marmol-azul-metalico.jpg",
+    "image2": "images/pla-marmol-azul-metalico-roll.jpg"
+  },
+  {
+    "name": "PLA Mármol Mármol Cáliza",
+    "hex": "#BCBEBE",
+    "type": "PLA",
+    "brand": "Polymaker",
+    "tone": "Brillante",
+    "link": "https://www.pritonic.com/products/455/panchroma-marmol",
+    "image1": "images/pla-marmol-marmol-caliza.jpg",
+    "image2": "images/pla-marmol-marmol-caliza-roll.jpg"
+  },
+  {
+    "name": "PLA Mármol Mármol Pizarra",
+    "hex": "#94B9C2",
+    "type": "PLA",
+    "brand": "Polymaker",
+    "tone": "Brillante",
+    "link": "https://www.pritonic.com/products/455/panchroma-marmol",
+    "image1": "images/pla-marmol-marmol-pizarra.jpg",
+    "image2": "images/pla-marmol-marmol-pizarra-roll.jpg"
+  },
+  {
+    "name": "PLA Mármol Blanco Mármol",
+    "hex": "#D7D4DA",
+    "type": "PLA",
+    "brand": "Polymaker",
+    "tone": "Brillante",
+    "link": "https://www.pritonic.com/products/455/panchroma-marmol",
+    "image1": "images/pla-marmol-blanco-marmol.jpg",
+    "image2": "images/pla-marmol-blanco-marmol-roll.jpg"
+  },
+  {
+    "name": "PLA Mármol Bronce metálico",
+    "hex": "#926043",
+    "type": "PLA",
+    "brand": "Polymaker",
+    "tone": "Brillante",
+    "link": "https://www.pritonic.com/products/455/panchroma-marmol",
+    "image1": "images/pla-marmol-bronce-metalico.jpg",
+    "image2": "images/pla-marmol-bronce-metalico-roll.jpg"
+  },
+  {
+    "name": "PLA con gradiente capuchino",
+    "hex": "gradient",
+    "type": "PLA",
+    "brand": "Polymaker",
+    "tone": "Mate",
+    "link": "https://www.pritonic.com/products/453/pla-polymaker-panchroma-con-gradiente",
+    "image1": "images/pla-con-gradiente-capuchino.jpg",
+    "image2": "images/pla-con-gradiente-capuchino-roll.jpg"
+  },
+  {
+    "name": "PLA con gradiente madera",
+    "hex": "gradient",
+    "type": "PLA",
+    "brand": "Polymaker",
+    "tone": "Mate",
+    "link": "https://www.pritonic.com/products/453/pla-polymaker-panchroma-con-gradiente",
+    "image1": "images/pla-con-gradiente-madera.jpg",
+    "image2": "images/pla-con-gradiente-madera-roll.jpg"
+  },
+  {
+    "name": "PLA+ Matte Pritonic negro sesamo mate",
+    "hex": "",
+    "type": "PLA",
     "brand": "Pritonic",
     "tone": "Mate",
-    "link": "https://www.pritonic.com/products/833/filamento-pla-matte-pritonic-1-kg-175-mm-acabado-mate-y-funcionalidad"
+    "link": "https://www.pritonic.com/products/833/filamento-pla-matte-pritonic-1-kg-175-mm-acabado-mate-y-funcionalidad",
+    "image1": "images/pla-matte-pritonic-negro-sesamo-mate.jpg",
+    "image2": "images/pla-matte-pritonic-negro-sesamo-mate-roll.jpg"
   },
   {
-    "name": "Sakura Pink",
-    "hex": "#F6B7C8",
-    "type": "PLA+",
+    "name": "PLA+ Matte Pritonic Rosa Sakura mate",
+    "hex": "",
+    "type": "PLA",
     "brand": "Pritonic",
     "tone": "Mate",
-    "link": "https://www.pritonic.com/products/833/filamento-pla-matte-pritonic-1-kg-175-mm-acabado-mate-y-funcionalidad"
+    "link": "https://www.pritonic.com/products/833/filamento-pla-matte-pritonic-1-kg-175-mm-acabado-mate-y-funcionalidad",
+    "image1": "images/pla-matte-pritonic-rosa-sakura-mate.jpg",
+    "image2": "images/pla-matte-pritonic-rosa-sakura-mate-roll.jpg"
   },
   {
-    "name": "Peach Pink",
-    "hex": "#F6C1A7",
-    "type": "PLA+",
+    "name": "PLA+ Matte Pritonic Rosa durazno mate",
+    "hex": "",
+    "type": "PLA",
     "brand": "Pritonic",
     "tone": "Mate",
-    "link": "https://www.pritonic.com/products/833/filamento-pla-matte-pritonic-1-kg-175-mm-acabado-mate-y-funcionalidad"
+    "link": "https://www.pritonic.com/products/833/filamento-pla-matte-pritonic-1-kg-175-mm-acabado-mate-y-funcionalidad",
+    "image1": "images/pla-matte-pritonic-rosa-durazno-mate.jpg",
+    "image2": "images/pla-matte-pritonic-rosa-durazno-mate-roll.jpg"
   },
   {
-    "name": "Mint Blue",
-    "hex": "#8FD6D1",
-    "type": "PLA+",
+    "name": "PLA+ Matte Pritonic Azul menta mate",
+    "hex": "",
+    "type": "PLA",
     "brand": "Pritonic",
     "tone": "Mate",
-    "link": "https://www.pritonic.com/products/833/filamento-pla-matte-pritonic-1-kg-175-mm-acabado-mate-y-funcionalidad"
+    "link": "https://www.pritonic.com/products/833/filamento-pla-matte-pritonic-1-kg-175-mm-acabado-mate-y-funcionalidad",
+    "image1": "images/pla-matte-pritonic-azul-menta-mate.jpg",
+    "image2": "images/pla-matte-pritonic-azul-menta-mate-roll.jpg"
   },
   {
-    "name": "Matcha Green",
-    "hex": "#98A86F",
-    "type": "PLA+",
+    "name": "PLA+ Matte Pritonic Verde Matcha mate",
+    "hex": "",
+    "type": "PLA",
     "brand": "Pritonic",
     "tone": "Mate",
-    "link": "https://www.pritonic.com/products/833/filamento-pla-matte-pritonic-1-kg-175-mm-acabado-mate-y-funcionalidad"
+    "link": "https://www.pritonic.com/products/833/filamento-pla-matte-pritonic-1-kg-175-mm-acabado-mate-y-funcionalidad",
+    "image1": "images/pla-matte-pritonic-verde-matcha-mate.jpg",
+    "image2": "images/pla-matte-pritonic-verde-matcha-mate-roll.jpg"
   },
   {
-    "name": "Malt Green",
-    "hex": "#7C8B5A",
-    "type": "PLA+",
+    "name": "PLA+ Matte Pritonic Verde malta mate",
+    "hex": "",
+    "type": "PLA",
     "brand": "Pritonic",
     "tone": "Mate",
-    "link": "https://www.pritonic.com/products/833/filamento-pla-matte-pritonic-1-kg-175-mm-acabado-mate-y-funcionalidad"
+    "link": "https://www.pritonic.com/products/833/filamento-pla-matte-pritonic-1-kg-175-mm-acabado-mate-y-funcionalidad",
+    "image1": "images/pla-matte-pritonic-verde-malta-mate.jpg",
+    "image2": "images/pla-matte-pritonic-verde-malta-mate-roll.jpg"
   },
   {
-    "name": "Lemon Yellow",
-    "hex": "#F7E45C",
-    "type": "PLA+",
+    "name": "PLA+ Matte Pritonic Amarillo limón mate",
+    "hex": "",
+    "type": "PLA",
     "brand": "Pritonic",
     "tone": "Mate",
-    "link": "https://www.pritonic.com/products/833/filamento-pla-matte-pritonic-1-kg-175-mm-acabado-mate-y-funcionalidad"
+    "link": "https://www.pritonic.com/products/833/filamento-pla-matte-pritonic-1-kg-175-mm-acabado-mate-y-funcionalidad",
+    "image1": "images/pla-matte-pritonic-amarillo-limon-mate.jpg",
+    "image2": "images/pla-matte-pritonic-amarillo-limon-mate-roll.jpg"
   },
   {
-    "name": "Latte Brown",
-    "hex": "#A67B5B",
-    "type": "PLA+",
+    "name": "PLA+ Matte Pritonic Marrón late mate",
+    "hex": "",
+    "type": "PLA",
     "brand": "Pritonic",
     "tone": "Mate",
-    "link": "https://www.pritonic.com/products/833/filamento-pla-matte-pritonic-1-kg-175-mm-acabado-mate-y-funcionalidad"
+    "link": "https://www.pritonic.com/products/833/filamento-pla-matte-pritonic-1-kg-175-mm-acabado-mate-y-funcionalidad",
+    "image1": "images/pla-matte-pritonic-marron-late-mate.jpg",
+    "image2": "images/pla-matte-pritonic-marron-late-mate-roll.jpg"
   },
   {
-    "name": "Durian Yellow",
-    "hex": "#D9B85F",
-    "type": "PLA+",
+    "name": "PLA+ Matte Pritonic Amarillo lechoso mate",
+    "hex": "",
+    "type": "PLA",
     "brand": "Pritonic",
     "tone": "Mate",
-    "link": "https://www.pritonic.com/products/833/filamento-pla-matte-pritonic-1-kg-175-mm-acabado-mate-y-funcionalidad"
+    "link": "https://www.pritonic.com/products/833/filamento-pla-matte-pritonic-1-kg-175-mm-acabado-mate-y-funcionalidad",
+    "image1": "images/pla-matte-pritonic-amarillo-lechoso-mate.jpg",
+    "image2": "images/pla-matte-pritonic-amarillo-lechoso-mate-roll.jpg"
   },
   {
-    "name": "Coconut Milk White",
-    "hex": "#F4F1E8",
-    "type": "PLA+",
+    "name": "PLA+ Matte Pritonic Leche de coco mate",
+    "hex": "",
+    "type": "PLA",
     "brand": "Pritonic",
     "tone": "Mate",
-    "link": "https://www.pritonic.com/products/833/filamento-pla-matte-pritonic-1-kg-175-mm-acabado-mate-y-funcionalidad"
+    "link": "https://www.pritonic.com/products/833/filamento-pla-matte-pritonic-1-kg-175-mm-acabado-mate-y-funcionalidad",
+    "image1": "images/pla-matte-pritonic-leche-de-coco-mate.jpg",
+    "image2": "images/pla-matte-pritonic-leche-de-coco-mate-roll.jpg"
   },
   {
-    "name": "Brown",
-    "hex": "#6B4A2E",
-    "type": "PLA+",
+    "name": "PLA+ Matte Pritonic Café mate",
+    "hex": "",
+    "type": "PLA",
     "brand": "Pritonic",
     "tone": "Mate",
-    "link": "https://www.pritonic.com/products/833/filamento-pla-matte-pritonic-1-kg-175-mm-acabado-mate-y-funcionalidad"
+    "link": "https://www.pritonic.com/products/833/filamento-pla-matte-pritonic-1-kg-175-mm-acabado-mate-y-funcionalidad",
+    "image1": "images/pla-matte-pritonic-cafe-mate.jpg",
+    "image2": "images/pla-matte-pritonic-cafe-mate-roll.jpg"
   },
   {
-    "name": "Ash Gray",
-    "hex": "#9A9A9A",
-    "type": "PLA+",
+    "name": "PLA+ Matte Pritonic Gris ceniza mate",
+    "hex": "",
+    "type": "PLA",
     "brand": "Pritonic",
     "tone": "Mate",
-    "link": "https://www.pritonic.com/products/833/filamento-pla-matte-pritonic-1-kg-175-mm-acabado-mate-y-funcionalidad"
+    "link": "https://www.pritonic.com/products/833/filamento-pla-matte-pritonic-1-kg-175-mm-acabado-mate-y-funcionalidad",
+    "image1": "images/pla-matte-pritonic-gris-ceniza-mate.jpg",
+    "image2": "images/pla-matte-pritonic-gris-ceniza-mate-roll.jpg"
   },
   {
-    "name": "Basic Yellow",
-    "hex": "#FFD400",
-    "type": "PLA+",
+    "name": "PLA+ Matte Pritonic Amarillo",
+    "hex": "",
+    "type": "PLA",
     "brand": "Pritonic",
     "tone": "Brillante",
-    "link": "https://www.pritonic.com/products/831/filamento-pla-pritonic-1-kg-175-mm-resistente-estable-y-facil-de-imprimir"
+    "link": "https://www.pritonic.com/products/831/filamento-pla-pritonic-1-kg-175-mm-resistente-estable-y-facil-de-imprimir",
+    "image1": "images/pla-matte-pritonic-amarillo.jpg",
+    "image2": "images/pla-matte-pritonic-amarillo-roll.jpg"
   },
   {
-    "name": "Basic White",
-    "hex": "#FFFFFF",
-    "type": "PLA+",
+    "name": "PLA+ Matte Pritonic Blanco",
+    "hex": "",
+    "type": "PLA",
     "brand": "Pritonic",
     "tone": "Brillante",
-    "link": "https://www.pritonic.com/products/831/filamento-pla-pritonic-1-kg-175-mm-resistente-estable-y-facil-de-imprimir"
+    "link": "https://www.pritonic.com/products/831/filamento-pla-pritonic-1-kg-175-mm-resistente-estable-y-facil-de-imprimir",
+    "image1": "images/pla-matte-pritonic-blanco.jpg",
+    "image2": "images/pla-matte-pritonic-blanco-roll.jpg"
   },
   {
-    "name": "Basic Violet",
-    "hex": "#7D4BC6",
-    "type": "PLA+",
+    "name": "PLA+ Matte Pritonic Violeta",
+    "hex": "",
+    "type": "PLA",
     "brand": "Pritonic",
     "tone": "Brillante",
-    "link": "https://www.pritonic.com/products/831/filamento-pla-pritonic-1-kg-175-mm-resistente-estable-y-facil-de-imprimir"
+    "link": "https://www.pritonic.com/products/831/filamento-pla-pritonic-1-kg-175-mm-resistente-estable-y-facil-de-imprimir",
+    "image1": "images/pla-matte-pritonic-violeta.jpg",
+    "image2": "images/pla-matte-pritonic-violeta-roll.jpg"
   },
   {
-    "name": "Basic Sky Blue",
-    "hex": "#69A8FF",
-    "type": "PLA+",
+    "name": "PLA+ Matte Pritonic Azul cielo",
+    "hex": "",
+    "type": "PLA",
     "brand": "Pritonic",
     "tone": "Brillante",
-    "link": "https://www.pritonic.com/products/831/filamento-pla-pritonic-1-kg-175-mm-resistente-estable-y-facil-de-imprimir"
+    "link": "https://www.pritonic.com/products/831/filamento-pla-pritonic-1-kg-175-mm-resistente-estable-y-facil-de-imprimir",
+    "image1": "images/pla-matte-pritonic-azul-cielo.jpg",
+    "image2": "images/pla-matte-pritonic-azul-cielo-roll.jpg"
   },
   {
-    "name": "Basic Skin",
-    "hex": "#E8C7A2",
-    "type": "PLA+",
+    "name": "PLA+ Matte Pritonic Beige",
+    "hex": "",
+    "type": "PLA",
     "brand": "Pritonic",
     "tone": "Brillante",
-    "link": "https://www.pritonic.com/products/831/filamento-pla-pritonic-1-kg-175-mm-resistente-estable-y-facil-de-imprimir"
+    "link": "https://www.pritonic.com/products/831/filamento-pla-pritonic-1-kg-175-mm-resistente-estable-y-facil-de-imprimir",
+    "image1": "images/pla-matte-pritonic-beige.jpg",
+    "image2": "images/pla-matte-pritonic-beige-roll.jpg"
   },
   {
-    "name": "Basic Red",
-    "hex": "#D72631",
-    "type": "PLA+",
+    "name": "PLA+ Matte Pritonic Rojo",
+    "hex": "",
+    "type": "PLA",
     "brand": "Pritonic",
     "tone": "Brillante",
-    "link": "https://www.pritonic.com/products/831/filamento-pla-pritonic-1-kg-175-mm-resistente-estable-y-facil-de-imprimir"
+    "link": "https://www.pritonic.com/products/831/filamento-pla-pritonic-1-kg-175-mm-resistente-estable-y-facil-de-imprimir",
+    "image1": "images/pla-matte-pritonic-rojo.jpg",
+    "image2": "images/pla-matte-pritonic-rojo-roll.jpg"
   },
   {
-    "name": "Basic Pink",
-    "hex": "#F58BB0",
-    "type": "PLA+",
+    "name": "PLA+ Matte Pritonic Rosado",
+    "hex": "",
+    "type": "PLA",
     "brand": "Pritonic",
     "tone": "Brillante",
-    "link": "https://www.pritonic.com/products/831/filamento-pla-pritonic-1-kg-175-mm-resistente-estable-y-facil-de-imprimir"
+    "link": "https://www.pritonic.com/products/831/filamento-pla-pritonic-1-kg-175-mm-resistente-estable-y-facil-de-imprimir",
+    "image1": "images/pla-matte-pritonic-rosado.jpg",
+    "image2": "images/pla-matte-pritonic-rosado-roll.jpg"
   },
   {
-    "name": "Basic Pine Green",
-    "hex": "#2E5E4E",
-    "type": "PLA+",
+    "name": "PLA+ Matte Pritonic Verde Pino",
+    "hex": "",
+    "type": "PLA",
     "brand": "Pritonic",
     "tone": "Brillante",
-    "link": "https://www.pritonic.com/products/831/filamento-pla-pritonic-1-kg-175-mm-resistente-estable-y-facil-de-imprimir"
+    "link": "https://www.pritonic.com/products/831/filamento-pla-pritonic-1-kg-175-mm-resistente-estable-y-facil-de-imprimir",
+    "image1": "images/pla-matte-pritonic-verde-pino.jpg",
+    "image2": "images/pla-matte-pritonic-verde-pino-roll.jpg"
   },
   {
-    "name": "Orchid Purple",
-    "hex": "#9B59B6",
-    "type": "PLA+",
+    "name": "PLA+ Matte Pritonic Púrpura orquídea",
+    "hex": "",
+    "type": "PLA",
     "brand": "Pritonic",
     "tone": "Brillante",
-    "link": "https://www.pritonic.com/products/831/filamento-pla-pritonic-1-kg-175-mm-resistente-estable-y-facil-de-imprimir"
+    "link": "https://www.pritonic.com/products/831/filamento-pla-pritonic-1-kg-175-mm-resistente-estable-y-facil-de-imprimir",
+    "image1": "images/pla-matte-pritonic-purpura-orquidea.jpg",
+    "image2": "images/pla-matte-pritonic-purpura-orquidea-roll.jpg"
   },
   {
-    "name": "Basic Orange",
-    "hex": "#F28C28",
-    "type": "PLA+",
+    "name": "PLA+ Matte Pritonic Naranja",
+    "hex": "",
+    "type": "PLA",
     "brand": "Pritonic",
     "tone": "Brillante",
-    "link": "https://www.pritonic.com/products/831/filamento-pla-pritonic-1-kg-175-mm-resistente-estable-y-facil-de-imprimir"
+    "link": "https://www.pritonic.com/products/831/filamento-pla-pritonic-1-kg-175-mm-resistente-estable-y-facil-de-imprimir",
+    "image1": "images/pla-matte-pritonic-naranja.jpg",
+    "image2": "images/pla-matte-pritonic-naranja-roll.jpg"
   },
   {
-    "name": "Olive Green",
-    "hex": "#708238",
-    "type": "PLA+",
+    "name": "PLA+ Matte Pritonic Verde Oliva",
+    "hex": "",
+    "type": "PLA",
     "brand": "Pritonic",
     "tone": "Brillante",
-    "link": "https://www.pritonic.com/products/831/filamento-pla-pritonic-1-kg-175-mm-resistente-estable-y-facil-de-imprimir"
+    "link": "https://www.pritonic.com/products/831/filamento-pla-pritonic-1-kg-175-mm-resistente-estable-y-facil-de-imprimir",
+    "image1": "images/pla-matte-pritonic-verde-oliva.jpg",
+    "image2": "images/pla-matte-pritonic-verde-oliva-roll.jpg"
   },
   {
-    "name": "Magenta",
-    "hex": "#D1007A",
-    "type": "PLA+",
+    "name": "PLA+ Matte Pritonic Magenta",
+    "hex": "",
+    "type": "PLA",
     "brand": "Pritonic",
     "tone": "Brillante",
-    "link": "https://www.pritonic.com/products/831/filamento-pla-pritonic-1-kg-175-mm-resistente-estable-y-facil-de-imprimir"
+    "link": "https://www.pritonic.com/products/831/filamento-pla-pritonic-1-kg-175-mm-resistente-estable-y-facil-de-imprimir",
+    "image1": "images/pla-matte-pritonic-magenta.jpg",
+    "image2": "images/pla-matte-pritonic-magenta-roll.jpg"
   },
   {
-    "name": "Basic Grey",
-    "hex": "#8B8C8E",
-    "type": "PLA+",
+    "name": "PLA+ Matte Pritonic Gris",
+    "hex": "",
+    "type": "PLA",
     "brand": "Pritonic",
     "tone": "Brillante",
-    "link": "https://www.pritonic.com/products/831/filamento-pla-pritonic-1-kg-175-mm-resistente-estable-y-facil-de-imprimir"
+    "link": "https://www.pritonic.com/products/831/filamento-pla-pritonic-1-kg-175-mm-resistente-estable-y-facil-de-imprimir",
+    "image1": "images/pla-matte-pritonic-gris.jpg",
+    "image2": "images/pla-matte-pritonic-gris-roll.jpg"
   },
   {
-    "name": "Basic Green",
-    "hex": "#3FA34D",
-    "type": "PLA+",
+    "name": "PLA+ Matte Pritonic Verde",
+    "hex": "",
+    "type": "PLA",
     "brand": "Pritonic",
     "tone": "Brillante",
-    "link": "https://www.pritonic.com/products/831/filamento-pla-pritonic-1-kg-175-mm-resistente-estable-y-facil-de-imprimir"
+    "link": "https://www.pritonic.com/products/831/filamento-pla-pritonic-1-kg-175-mm-resistente-estable-y-facil-de-imprimir",
+    "image1": "images/pla-matte-pritonic-verde.jpg",
+    "image2": "images/pla-matte-pritonic-verde-roll.jpg"
   },
   {
-    "name": "Dark Green",
-    "hex": "#1F4D36",
-    "type": "PLA+",
+    "name": "PLA+ Matte Pritonic Verde oscuro",
+    "hex": "",
+    "type": "PLA",
     "brand": "Pritonic",
     "tone": "Brillante",
-    "link": "https://www.pritonic.com/products/831/filamento-pla-pritonic-1-kg-175-mm-resistente-estable-y-facil-de-imprimir"
+    "link": "https://www.pritonic.com/products/831/filamento-pla-pritonic-1-kg-175-mm-resistente-estable-y-facil-de-imprimir",
+    "image1": "images/pla-matte-pritonic-verde-oscuro.jpg",
+    "image2": "images/pla-matte-pritonic-verde-oscuro-roll.jpg"
   },
   {
-    "name": "Dark Gray",
-    "hex": "#55585C",
-    "type": "PLA+",
+    "name": "PLA+ Matte Pritonic Gris oscuro",
+    "hex": "",
+    "type": "PLA",
     "brand": "Pritonic",
     "tone": "Brillante",
-    "link": "https://www.pritonic.com/products/831/filamento-pla-pritonic-1-kg-175-mm-resistente-estable-y-facil-de-imprimir"
+    "link": "https://www.pritonic.com/products/831/filamento-pla-pritonic-1-kg-175-mm-resistente-estable-y-facil-de-imprimir",
+    "image1": "images/pla-matte-pritonic-gris-oscuro.jpg",
+    "image2": "images/pla-matte-pritonic-gris-oscuro-roll.jpg"
   },
   {
-    "name": "Cyan",
-    "hex": "#00B7C7",
-    "type": "PLA+",
+    "name": "PLA+ Matte Pritonic Cian",
+    "hex": "",
+    "type": "PLA",
     "brand": "Pritonic",
     "tone": "Brillante",
-    "link": "https://www.pritonic.com/products/831/filamento-pla-pritonic-1-kg-175-mm-resistente-estable-y-facil-de-imprimir"
+    "link": "https://www.pritonic.com/products/831/filamento-pla-pritonic-1-kg-175-mm-resistente-estable-y-facil-de-imprimir",
+    "image1": "images/pla-matte-pritonic-cian.jpg",
+    "image2": "images/pla-matte-pritonic-cian-roll.jpg"
   },
   {
-    "name": "Chocolate",
-    "hex": "#5A3825",
-    "type": "PLA+",
+    "name": "PLA+ Matte Pritonic Chocolate",
+    "hex": "",
+    "type": "PLA",
     "brand": "Pritonic",
     "tone": "Brillante",
-    "link": "https://www.pritonic.com/products/831/filamento-pla-pritonic-1-kg-175-mm-resistente-estable-y-facil-de-imprimir"
+    "link": "https://www.pritonic.com/products/831/filamento-pla-pritonic-1-kg-175-mm-resistente-estable-y-facil-de-imprimir",
+    "image1": "images/pla-matte-pritonic-chocolate.jpg",
+    "image2": "images/pla-matte-pritonic-chocolate-roll.jpg"
   },
   {
-    "name": "Basic Brown",
-    "hex": "#6F4E37",
-    "type": "PLA+",
+    "name": "PLA+ Matte Pritonic Café",
+    "hex": "",
+    "type": "PLA",
     "brand": "Pritonic",
     "tone": "Brillante",
-    "link": "https://www.pritonic.com/products/831/filamento-pla-pritonic-1-kg-175-mm-resistente-estable-y-facil-de-imprimir"
+    "link": "https://www.pritonic.com/products/831/filamento-pla-pritonic-1-kg-175-mm-resistente-estable-y-facil-de-imprimir",
+    "image1": "images/pla-matte-pritonic-cafe.jpg",
+    "image2": "images/pla-matte-pritonic-cafe-roll.jpg"
   },
   {
-    "name": "Basic Blue",
-    "hex": "#1F5EFF",
-    "type": "PLA+",
+    "name": "PLA+ Matte Pritonic Azul",
+    "hex": "",
+    "type": "PLA",
     "brand": "Pritonic",
     "tone": "Brillante",
-    "link": "https://www.pritonic.com/products/831/filamento-pla-pritonic-1-kg-175-mm-resistente-estable-y-facil-de-imprimir"
+    "link": "https://www.pritonic.com/products/831/filamento-pla-pritonic-1-kg-175-mm-resistente-estable-y-facil-de-imprimir",
+    "image1": "images/pla-matte-pritonic-azul.jpg",
+    "image2": "images/pla-matte-pritonic-azul-roll.jpg"
   },
   {
-    "name": "Basic Black",
-    "hex": "#111111",
-    "type": "PLA+",
+    "name": "PLA+ Matte Pritonic Negro",
+    "hex": "",
+    "type": "PLA",
     "brand": "Pritonic",
     "tone": "Brillante",
-    "link": "https://www.pritonic.com/products/831/filamento-pla-pritonic-1-kg-175-mm-resistente-estable-y-facil-de-imprimir"
+    "link": "https://www.pritonic.com/products/831/filamento-pla-pritonic-1-kg-175-mm-resistente-estable-y-facil-de-imprimir",
+    "image1": "images/pla-matte-pritonic-negro.jpg",
+    "image2": "images/pla-matte-pritonic-negro-roll.jpg"
   },
   {
-    "name": "Apple Green",
-    "hex": "#7ED957",
-    "type": "PLA+",
+    "name": "PLA+ Matte Pritonic Verde manzana",
+    "hex": "",
+    "type": "PLA",
     "brand": "Pritonic",
     "tone": "Brillante",
-    "link": "https://www.pritonic.com/products/831/filamento-pla-pritonic-1-kg-175-mm-resistente-estable-y-facil-de-imprimir"
+    "link": "https://www.pritonic.com/products/831/filamento-pla-pritonic-1-kg-175-mm-resistente-estable-y-facil-de-imprimir",
+    "image1": "images/pla-matte-pritonic-verde-manzana.jpg",
+    "image2": "images/pla-matte-pritonic-verde-manzana-roll.jpg"
   }
 ]

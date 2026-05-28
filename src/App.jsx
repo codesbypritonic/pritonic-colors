@@ -123,7 +123,7 @@ function App() {
       const pixel = ctx.getImageData(x * scaleX, y * scaleY, 1, 1).data
       const hex = '#' + [pixel[0], pixel[1], pixel[2]].map(v => v.toString(16).padStart(2, '0')).join('')
       
-      if (selectedColors.length < 4 && !selectedColors.includes(hex)) {
+      if (selectedColors.length < 6 && !selectedColors.includes(hex)) {
         setSelectedColors([...selectedColors, hex])
         
         const topFilaments = findTopSimilarFilaments(hex, 3)
@@ -145,12 +145,32 @@ function App() {
     setSelectedColorObjects([])
   }
 
-  // Manejar click en un color desde la vista compacta
+  // Manejar click en un color desde el grid
   const handleColorClick = (filament) => {
     if (selectedColors.includes(filament.hex)) {
       removeColor(filament.hex)
     } else {
-      if (selectedColors.length < 4) {
+      if (selectedColors.length < 6) {
+        setSelectedColors([...selectedColors, filament.hex])
+        setSelectedColorObjects([...selectedColorObjects, { 
+          color: filament.hex, 
+          suggestions: [{ ...filament, similarity: 1 }] 
+        }])
+      }
+    }
+  }
+
+  // Manejar selección desde el catálogo completo (tarjetas)
+  const handleFilamentSelect = (filament) => {
+    if (selectedColorObjects.some(obj => obj.suggestions[0]?.hex === filament.hex)) {
+      // Ya está seleccionado, lo quitamos
+      const index = selectedColorObjects.findIndex(obj => obj.suggestions[0]?.hex === filament.hex)
+      if (index !== -1) {
+        const colorToRemove = selectedColors[index]
+        removeColor(colorToRemove)
+      }
+    } else {
+      if (selectedColors.length < 6) {
         setSelectedColors([...selectedColors, filament.hex])
         setSelectedColorObjects([...selectedColorObjects, { 
           color: filament.hex, 
@@ -181,499 +201,408 @@ function App() {
     setShowAllColors(true)
   }
 
-const sortedByHex = [...filaments].sort((a, b) =>
-  parseInt(a.hex.slice(1), 16) - parseInt(b.hex.slice(1), 16)
-)
+  // Filtrar los colores para el grid
+  const filteredColors = filaments.filter(f => {
+    if (activeBrand && f.brand !== activeBrand) return false
+    if (activeTone.length > 0 && !activeTone.includes(f.tone)) return false
+    if (searchTerm && !f.name.toLowerCase().includes(searchTerm.toLowerCase())) return false
+    return true
+  })
+
+  // Agrupación por familias de color
+  const getColorFamily = (hex) => {
+    const r = parseInt(hex.slice(1, 3), 16)
+    const g = parseInt(hex.slice(3, 5), 16)
+    const b = parseInt(hex.slice(5, 7), 16)
+    
+    if (r > 200 && g > 200 && b > 200) return 'Blancos'
+    if (r < 50 && g < 50 && b < 50) return 'Negros'
+    if (r > g && r > b && r - g > 50) return 'Rojos'
+    if (g > r && g > b && g - r > 30) return 'Verdes'
+    if (b > r && b > g && b - r > 30) return 'Azules'
+    if (Math.abs(r - g) < 30 && Math.abs(g - b) < 30 && r > 100) return 'Grises/Neutros'
+    if (r > 200 && g > 150 && b < 100) return 'Tierra/Naranjas'
+    if (r > 200 && g > 100 && b > 200) return 'Rosas/Morados'
+    return 'Otros'
+  }
+
+  const groupedColors = filteredColors.reduce((acc, filament) => {
+    const family = getColorFamily(filament.hex)
+    if (!acc[family]) acc[family] = []
+    acc[family].push(filament)
+    return acc
+  }, {})
+
+  const familyOrder = ['Blancos', 'Negros', 'Rojos', 'Verdes', 'Azules', 'Grises/Neutros', 'Tierra/Naranjas', 'Rosas/Morados', 'Otros']
+
+  // Verificar si un filamento está seleccionado
+  const isFilamentSelected = (filament) => {
+    return selectedColorObjects.some(obj => obj.suggestions[0]?.hex === filament.hex)
+  }
+
   if (isLoading) {
     return (
-      <div style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', background: '#f3f4f6' }}>
+      <div style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', background: '#ffffff' }}>
         <div style={{ textAlign: 'center' }}>
-          <div style={{ width: '40px', height: '40px', border: '3px solid #e5e7eb', borderTopColor: '#2563eb', borderRadius: '50%', animation: 'spin 1s linear infinite', margin: '0 auto 16px' }}></div>
-          <p style={{ color: '#6b7280' }}>Cargando colores...</p>
+          <div style={{ width: '40px', height: '40px', border: '2px solid #e5e7eb', borderTopColor: '#3b82f6', borderRadius: '50%', animation: 'spin 1s linear infinite', margin: '0 auto 16px' }}></div>
+          <p style={{ color: '#6b7280', fontSize: '14px' }}>Cargando colores...</p>
         </div>
       </div>
     )
   }
 
+  const headerStyles = {
+    display: 'flex',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    padding: '16px 32px',
+    borderBottom: '1px solid #f0f0f0',
+    backgroundColor: '#ffffff',
+    position: 'sticky',
+    top: 0,
+    zIndex: 100
+  }
+
+  const uploadButtonStyles = {
+    backgroundColor: '#3b82f6',
+    color: 'white',
+    padding: '8px 20px',
+    borderRadius: '40px',
+    fontSize: '14px',
+    fontWeight: '500',
+    cursor: 'pointer',
+    transition: 'all 0.2s',
+    border: 'none'
+  }
+
+  const filterPillStyles = (isActive) => ({
+    padding: '6px 14px',
+    borderRadius: '40px',
+    fontSize: '13px',
+    fontWeight: '500',
+    cursor: 'pointer',
+    transition: 'all 0.2s',
+    backgroundColor: isActive ? '#3b82f6' : '#f3f4f6',
+    color: isActive ? 'white' : '#374151',
+    border: 'none'
+  })
+
+  const colorSwatchStyles = (hex, isSelected) => ({
+    width: '100%',
+    paddingBottom: '100%',
+    backgroundColor: hex,
+    borderRadius: '12px',
+    cursor: 'pointer',
+    transition: 'all 0.2s ease',
+    boxShadow: isSelected ? '0 0 0 3px #3b82f6, 0 0 0 6px rgba(59,130,246,0.2)' : '0 1px 3px rgba(0,0,0,0.05)',
+    position: 'relative'
+  })
+
   return (
-    <div style={{ minHeight: '100vh', background: 'linear-gradient(135deg, #f5f7fa 0%, #f3f4f6 100%)', fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif' }}>
-      {/* Header */}
-      <div style={{ background: 'rgba(255,255,255,0.8)', backdropFilter: 'blur(10px)', borderBottom: '1px solid #e5e7eb', position: 'sticky', top: 0, zIndex: 50 }}>
-        <div style={{ padding: '12px 24px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '12px' }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-            <div style={{ width: '32px', height: '32px', background: 'linear-gradient(135deg, #2563eb, #4f46e5)', borderRadius: '10px' }}></div>
-            <div>
-              <h1 style={{ fontSize: '20px', fontWeight: 'bold', margin: 0 }}>Pritonic Colors</h1>
-              <p style={{ fontSize: '11px', color: '#9ca3af', margin: 0 }}>PLA Filament Color Matcher</p>
-            </div>
-          </div>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '16px', flexWrap: 'wrap' }}>
-            <input 
-              type="text" 
-              placeholder="Buscar filamento..."
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
-              style={{ padding: '8px 16px', borderRadius: '20px', border: '1px solid #e5e7eb', fontSize: '13px', width: '180px' }}
-            />
-            <span style={{ padding: '4px 12px', background: '#f3f4f6', borderRadius: '20px', fontSize: '13px' }}>{filteredFilaments.length} filamentos</span>
-            <button onClick={resetFilters} style={{ fontSize: '13px', color: '#9ca3af', background: 'none', border: 'none', cursor: 'pointer' }}>Resetear todo</button>
-          </div>
+    <div style={{ minHeight: '100vh', backgroundColor: '#ffffff', fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif' }}>
+      
+      {/* Header Compacto */}
+      <div style={headerStyles}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+          <div style={{ width: '32px', height: '32px', background: 'linear-gradient(135deg, #3b82f6, #2563eb)', borderRadius: '8px' }}></div>
+          <span style={{ fontSize: '18px', fontWeight: '600', color: '#111827' }}>Pritonic Colors</span>
+        </div>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
+          <input 
+            type="text" 
+            placeholder="Buscar color..."
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+            style={{ padding: '8px 16px', borderRadius: '40px', border: '1px solid #e5e7eb', fontSize: '14px', width: '200px', outline: 'none', transition: 'all 0.2s' }}
+            onFocus={(e) => e.target.style.borderColor = '#3b82f6'}
+            onBlur={(e) => e.target.style.borderColor = '#e5e7eb'}
+          />
+          <span style={{ fontSize: '13px', color: '#6b7280' }}>{filteredColors.length} colores</span>
+          <button onClick={resetFilters} style={{ fontSize: '13px', color: '#9ca3af', background: 'none', border: 'none', cursor: 'pointer' }}>Resetear</button>
         </div>
       </div>
 
-      {/* Hero */}
-      <div style={{ textAlign: 'center', padding: '40px 24px', background: 'linear-gradient(135deg, #eff6ff 0%, #f5f3ff 100%)' }}>
-        <h2 style={{ fontSize: '32px', fontWeight: 'bold', marginBottom: '12px' }}>Encuentra tu color de filamento <span style={{ color: '#2563eb' }}>ideal</span></h2>
-        <p style={{ color: '#6b7280', maxWidth: '600px', margin: '0 auto 24px' }}>Sube una imagen o explora todos los colores para encontrar el color de PLA que necesitas</p>
-        <p style={{ color: '#6b7280', maxWidth: '600px', margin: '0 auto 24px' }}> Nota: aquí están la mayoría de los colores PLA que manejamos, sin embargo esta app no está conectada a nuestro inventario, por favor revisa nuestra página para verificar disponibilidad</p>
-
-        <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap' }}>
-          <label style={{ background: '#1f2937', color: 'white', padding: '12px 28px', borderRadius: '40px', cursor: 'pointer', fontWeight: '500', fontSize: '14px' }}>
+      {/* Hero Simplificado */}
+      <div style={{ textAlign: 'center', padding: '48px 24px', background: 'linear-gradient(135deg, #f8fafc 0%, #ffffff 100%)' }}>
+        <h2 style={{ fontSize: '36px', fontWeight: '600', marginBottom: '16px', color: '#111827' }}>
+          Encuentra tu <span style={{ color: '#3b82f6' }}>color ideal</span>
+        </h2>
+        <p style={{ color: '#6b7280', maxWidth: '500px', margin: '0 auto 24px', fontSize: '15px', lineHeight: '1.5' }}>
+          Sube una foto o explora nuestra paleta de colores PLA
+        </p>
+        <div style={{ display: 'flex', gap: '12px', justifyContent: 'center' }}>
+          <label style={uploadButtonStyles}>
             📸 Subir imagen
             <input type="file" accept="image/*" onChange={handleImageUpload} style={{ display: 'none' }} />
           </label>
           <button 
-            onClick={() => { setShowAllColors(!showAllColors); }}
-            style={{ background: showAllColors ? '#2563eb' : 'white', color: showAllColors ? 'white' : '#1f2937', padding: '12px 28px', borderRadius: '40px', border: '1px solid #e5e7eb', cursor: 'pointer', fontWeight: '500', fontSize: '14px' }}
+            onClick={() => setShowAllColors(!showAllColors)}
+            style={{ padding: '8px 20px', borderRadius: '40px', fontSize: '14px', fontWeight: '500', cursor: 'pointer', backgroundColor: '#f3f4f6', color: '#374151', border: 'none' }}
           >
-            🎨 {showAllColors ? 'Ocultar colores' : 'Ver todos los colores'}
+            {showAllColors ? 'Ocultar explorador' : 'Explorar colores'}
           </button>
         </div>
       </div>
 
       {/* Main Content */}
-      <div style={{ padding: '32px 24px' }}>
-        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '32px' }}>
-          {/* Sidebar */}
-          <div style={{ flex: '1', minWidth: '260px', maxWidth: '320px' }}>
-            {imageUrl && (
-              <div style={{ background: 'white', borderRadius: '20px', padding: '20px', marginBottom: '20px', boxShadow: '0 1px 3px rgba(0,0,0,0.1)' }}>
-                <div onClick={getColorFromImage} style={{ cursor: 'crosshair' }}>
-                  <img src={imageUrl} alt="Preview" style={{ width: '100%', borderRadius: '12px' }} />
-                  <p style={{ fontSize: '11px', textAlign: 'center', marginTop: '8px', color: '#6b7280' }}>✚ Haz click en la imagen para seleccionar un color</p>
-                </div>
-              </div>
-            )}
-
-            {selectedColors.length > 0 && (
-              <div style={{ background: 'white', borderRadius: '20px', padding: '20px', marginBottom: '20px', boxShadow: '0 1px 3px rgba(0,0,0,0.1)' }}>
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '12px' }}>
-                  <h3 style={{ fontWeight: 'bold', fontSize: '14px', margin: 0 }}>
-                    🎨 Colores seleccionados ({selectedColors.length}/4)
-                  </h3>
-                  <button 
-                    onClick={resetSelectedColors}
-                    style={{ fontSize: '11px', color: '#ef4444', background: 'none', border: 'none', cursor: 'pointer' }}
-                  >
-                    ✕ Limpiar todos
+      <div style={{ maxWidth: '1600px', margin: '0 auto', padding: '40px 48px' }}>
+        <div style={{ display: 'flex', gap: '48px', alignItems: 'flex-start' }}>
+          
+          {/* Panel Izquierdo - Filtros */}
+          <div style={{ width: '220px', flexShrink: 0, position: 'sticky', top: '80px' }}>
+            <h4 style={{ fontSize: '13px', fontWeight: '600', color: '#6b7280', marginBottom: '16px', letterSpacing: '0.5px' }}>FILTROS</h4>
+            <div style={{ marginBottom: '24px' }}>
+              <label style={{ fontSize: '13px', fontWeight: '500', color: '#374151', display: 'block', marginBottom: '8px' }}>Marca</label>
+              <select value={activeBrand} onChange={(e) => setActiveBrand(e.target.value)} style={{ width: '100%', padding: '8px 12px', borderRadius: '10px', border: '1px solid #e5e7eb', fontSize: '13px', backgroundColor: 'white' }}>
+                <option value="">Todas</option>
+                {brands.map(b => <option key={b} value={b}>{b}</option>)}
+              </select>
+            </div>
+            <div>
+              <label style={{ fontSize: '13px', fontWeight: '500', color: '#374151', display: 'block', marginBottom: '8px' }}>Acabado</label>
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
+                {tones.map(t => (
+                  <button key={t} onClick={() => toggleTone(t)} style={filterPillStyles(activeTone.includes(t))}>
+                    {t}
                   </button>
-                </div>
-                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '12px' }}>
-                  {selectedColors.map((color, idx) => {
-                    const suggestions = selectedColorObjects[idx]?.suggestions || []
-                    return (
-                      <div key={idx} style={{ display: 'flex', alignItems: 'center', gap: '8px', background: '#f3f4f6', padding: '6px 12px', borderRadius: '30px' }}>
-                        <div style={{ width: '24px', height: '24px', backgroundColor: color, borderRadius: '6px', border: '1px solid #ddd' }}></div>
-                        <span style={{ fontFamily: 'monospace', fontSize: '11px' }}>{color}</span>
-                        <span style={{ fontSize: '10px', color: '#2563eb' }}>→ {suggestions[0]?.name || '...'}</span>
-                        <button onClick={() => removeColor(color)} style={{ background: 'none', border: 'none', cursor: 'pointer', fontSize: '14px', color: '#999' }}>✕</button>
-                      </div>
-                    )
-                  })}
-                </div>
-                {selectedColors.length === 4 && <p style={{ fontSize: '11px', color: '#f59e0b', marginTop: '8px' }}>⚠️ Máximo 4 colores seleccionados</p>}
-              </div>
-            )}
-
-            <div style={{ background: 'white', borderRadius: '20px', padding: '20px', boxShadow: '0 1px 3px rgba(0,0,0,0.1)' }}>
-              <h3 style={{ fontWeight: 'bold', marginBottom: '16px' }}>🔧 Filtros</h3>
-              <div style={{ marginBottom: '16px' }}>
-                <label style={{ fontSize: '13px', fontWeight: '500', display: 'block', marginBottom: '8px' }}>Marca</label>
-                <select value={activeBrand} onChange={(e) => setActiveBrand(e.target.value)} style={{ width: '100%', padding: '10px', borderRadius: '12px', border: '1px solid #e5e7eb' }}>
-                  <option value="">Todas las marcas</option>
-                  {brands.map(b => <option key={b} value={b}>{b}</option>)}
-                </select>
-              </div>
-              <div>
-                <label style={{ fontSize: '13px', fontWeight: '500', display: 'block', marginBottom: '8px' }}>Acabado (puedes seleccionar varios)</label>
-                <div style={{ display: 'flex', gap: '8px' }}>
-                  {tones.map(t => (
-                    <button key={t} onClick={() => toggleTone(t)} style={{ flex: 1, padding: '10px', borderRadius: '12px', border: 'none', cursor: 'pointer', background: activeTone.includes(t) ? '#2563eb' : '#f3f4f6', color: activeTone.includes(t) ? 'white' : '#374151' }}>
-                      {t} {activeTone.includes(t) && '✓'}
-                    </button>
-                  ))}
-                </div>
+                ))}
               </div>
             </div>
+            
+            {imageUrl && (
+              <div style={{ marginTop: '32px' }}>
+                <h4 style={{ fontSize: '13px', fontWeight: '600', color: '#6b7280', marginBottom: '12px', letterSpacing: '0.5px' }}>PREVIEW</h4>
+                <div onClick={getColorFromImage} style={{ cursor: 'crosshair' }}>
+                  <img src={imageUrl} alt="Preview" style={{ width: '100%', borderRadius: '12px', border: '1px solid #f0f0f0' }} />
+                  <p style={{ fontSize: '11px', textAlign: 'center', marginTop: '8px', color: '#9ca3af' }}>Click para capturar color</p>
+                </div>
+              </div>
+            )}
           </div>
 
-          {/* Main Content Area */}
-          <div style={{ flex: '3' }}>
+          {/* Panel Central - Grid de Colores */}
+          <div style={{ flex: 1 }}>
             {showAllColors && (
-              <div style={{ marginBottom: '32px' }}>
-                <h2 style={{ fontSize: '20px', fontWeight: 'bold', marginBottom: '16px' }}>
-                  🎨 Todos los colores ({filaments.length}) 
-                  <span style={{ fontSize: '12px', fontWeight: 'normal', color: '#6b7280', marginLeft: '8px' }}>ordenados por HEX</span>
-                </h2>
-                <p style={{ fontSize: '12px', color: '#2563eb', marginBottom: '12px' }}>
-                  ✨ Haz click en cualquier color para seleccionarlo (máximo 4). Click nuevamente para deseleccionar.
-                </p>
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(80px, 1fr))', gap: '10px', background: 'white', borderRadius: '20px', padding: '24px', boxShadow: '0 1px 3px rgba(0,0,0,0.1)' }}>
-                  {sortedByHex.map((f, i) => (
-                    <div key={i} onClick={() => handleColorClick(f)} style={{ cursor: 'pointer', transition: 'all 0.2s', transform: 'scale(1)' }} onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.05)'} onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}>
-                      <div style={{ width: '100%', paddingBottom: '100%', backgroundColor: f.hex, borderRadius: '12px', boxShadow: selectedColors.includes(f.hex) ? '0 0 0 3px #2563eb, 0 2px 6px rgba(0,0,0,0.1)' : '0 2px 6px rgba(0,0,0,0.1)', border: '2px solid white', position: 'relative' }}>
-                        {selectedColors.includes(f.hex) && (
-                          <div style={{ position: 'absolute', top: '-6px', right: '-6px', background: '#2563eb', color: 'white', borderRadius: '50%', width: '18px', height: '18px', fontSize: '10px', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 'bold' }}>
-                            ✓
-                          </div>
-                        )}
-                        <div style={{ position: 'absolute', bottom: '6px', left: '4px', right: '4px', fontSize: '8px', color: '#fff', textShadow: '0 1px 2px rgba(0,0,0,0.5)', textAlign: 'center', overflow: 'hidden', whiteSpace: 'nowrap', textOverflow: 'ellipsis' }}>
-                          {f.name}
-                        </div>
-                      </div>
-                    </div>
-                  ))}
+              <div>
+                <div style={{ marginBottom: '24px' }}>
+                  <h3 style={{ fontSize: '20px', fontWeight: '600', color: '#111827', marginBottom: '4px' }}>Explorar paleta</h3>
+                  <p style={{ fontSize: '13px', color: '#6b7280' }}>Selecciona hasta 6 colores para comparar</p>
                 </div>
-
-                {/* Sugerencias agrupadas por color - CON 2 IMÁGENES */}
-                {selectedColorObjects.length > 0 && (
-                  <div style={{ marginTop: '32px' }}>
-                    {selectedColorObjects.map((item, idx) => (
-                      <div key={idx} style={{ 
-                        marginBottom: '40px',
-                        background: 'white',
-                        borderRadius: '24px',
-                        padding: '20px',
-                        boxShadow: '0 2px 12px rgba(0,0,0,0.08)',
-                        border: '1px solid #f0f0f0'
+                
+                {familyOrder.map(family => {
+                  const colors = groupedColors[family]
+                  if (!colors || colors.length === 0) return null
+                  return (
+                    <div key={family} style={{ marginBottom: '32px' }}>
+                      <h4 style={{ fontSize: '14px', fontWeight: '600', color: '#6b7280', marginBottom: '16px', letterSpacing: '0.3px' }}>{family}</h4>
+                      <div style={{ 
+                        display: 'grid', 
+                        gridTemplateColumns: 'repeat(auto-fill, minmax(100px, 1fr))', 
+                        gap: '16px',
+                        marginBottom: '24px'
                       }}>
-                        <div style={{ 
-                          display: 'flex', 
-                          alignItems: 'center', 
-                          gap: '12px', 
-                          marginBottom: '20px',
-                          paddingBottom: '12px',
-                          borderBottom: '2px solid #f0f0f0'
-                        }}>
-                          <div style={{ 
-                            width: '32px', 
-                            height: '32px', 
-                            backgroundColor: item.color, 
-                            borderRadius: '10px', 
-                            border: '2px solid #e5e7eb',
-                            boxShadow: '0 2px 4px rgba(0,0,0,0.1)'
-                          }}></div>
-                          <div>
-                            <h3 style={{ fontSize: '16px', fontWeight: 'bold', margin: 0 }}>
-                              Color seleccionado {idx + 1}
-                            </h3>
-                            <p style={{ fontSize: '12px', color: '#666', margin: '4px 0 0 0' }}>
-                              {item.color} — {item.suggestions.length} filamentos sugeridos
-                            </p>
-                          </div>
-                        </div>
-
-                        <div style={{ 
-                          display: 'grid', 
-                          gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))', 
-                          gap: '20px'
-                        }}>
-                          {item.suggestions.map((filament, fIdx) => (
-                            <div key={fIdx} style={{ 
-                              backgroundColor: '#fafafa', 
-                              borderRadius: '16px', 
-                              overflow: 'hidden', 
-                              boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
-                              transition: 'transform 0.3s, box-shadow 0.3s',
-                              position: 'relative',
-                              cursor: 'pointer'
-                            }}
-                            onMouseEnter={(e) => {
-                              e.currentTarget.style.transform = 'translateY(-2px)'
-                              e.currentTarget.style.boxShadow = '0 8px 20px rgba(0,0,0,0.15)'
-                            }}
-                            onMouseLeave={(e) => {
-                              e.currentTarget.style.transform = 'translateY(0)'
-                              e.currentTarget.style.boxShadow = '0 1px 3px rgba(0,0,0,0.08)'
-                            }}>
-                              {/* Estado normal - muestra image1 */}
-                              <div className="card-normal" style={{ display: 'flex', padding: '16px', gap: '14px', transition: 'opacity 0.3s' }}>
-                                {filament.image1 && (
-                                  <img 
-                                    src={filament.image1} 
-                                    alt={filament.name} 
-                                    style={{ 
-                                      width: '70px', 
-                                      height: '70px', 
-                                      objectFit: 'cover', 
-                                      borderRadius: '12px',
-                                      boxShadow: '0 2px 4px rgba(0,0,0,0.1)'
-                                    }} 
-                                  />
-                                )}
-                                <div style={{ flex: 1 }}>
-                                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'start' }}>
-                                    <div>
-                                      <h4 style={{ margin: '0 0 4px 0', fontSize: '15px', fontWeight: 'bold' }}>{filament.name}</h4>
-                                      <p style={{ fontSize: '11px', color: '#666', margin: 0 }}>{filament.brand} • {filament.tone}</p>
-                                    </div>
-                                    <div style={{ 
-                                      width: '32px', 
-                                      height: '32px', 
-                                      backgroundColor: filament.hex, 
-                                      borderRadius: '8px', 
-                                      border: '1px solid #ddd',
-                                      boxShadow: 'inset 0 1px 2px rgba(0,0,0,0.05)'
-                                    }}></div>
-                                  </div>
-                                  <div style={{ margin: '10px 0' }}>
-                                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '4px' }}>
-                                      <span style={{ fontSize: '10px', color: '#666' }}>Coincidencia</span>
-                                      <span style={{ fontSize: '11px', fontWeight: 'bold', color: '#2563eb' }}>{Math.round((filament.similarity || 0) * 100)}%</span>
-                                    </div>
-                                    <div style={{ height: '4px', background: '#e5e7eb', borderRadius: '2px', overflow: 'hidden' }}>
-                                      <div style={{ 
-                                        width: `${(filament.similarity || 0) * 100}%`, 
-                                        height: '100%', 
-                                        background: 'linear-gradient(90deg, #2563eb, #4f46e5)',
-                                        borderRadius: '2px'
-                                      }}></div>
-                                    </div>
-                                  </div>
-                                  <a 
-                                    href={filament.link} 
-                                    target="_blank" 
-                                    rel="noopener noreferrer"
-                                    style={{ 
-                                      display: 'block', 
-                                      textAlign: 'center', 
-                                      backgroundColor: '#1f2937', 
-                                      color: 'white', 
-                                      padding: '8px 12px', 
-                                      borderRadius: '10px', 
-                                      textDecoration: 'none', 
-                                      fontSize: '12px', 
-                                      fontWeight: '500',
-                                      transition: 'background 0.2s'
-                                    }}
-                                    onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#2563eb'}
-                                    onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#1f2937'}
-                                  >
-                                    Ver producto →
-                                  </a>
-                                </div>
-                              </div>
-
-                              {/* Estado hover - muestra image2 ocupando toda la tarjeta */}
-                              {filament.image2 && (
-                                <div className="card-hover" style={{
+                        {colors.map((f, i) => (
+                          <div key={i} style={{ textAlign: 'center' }}>
+                            <div 
+                              onClick={() => handleColorClick(f)} 
+                              style={colorSwatchStyles(f.hex, selectedColors.includes(f.hex))}
+                              onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.02)'}
+                              onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}
+                            >
+                              {selectedColors.includes(f.hex) && (
+                                <div style={{
                                   position: 'absolute',
-                                  top: 0,
-                                  left: 0,
-                                  right: 0,
-                                  bottom: 0,
-                                  backgroundColor: 'white',
-                                  borderRadius: '16px',
-                                  overflow: 'hidden',
-                                  opacity: 0,
-                                  transition: 'opacity 0.3s ease',
-                                  zIndex: 10,
+                                  top: '-8px',
+                                  right: '-8px',
+                                  backgroundColor: '#3b82f6',
+                                  color: 'white',
+                                  borderRadius: '50%',
+                                  width: '20px',
+                                  height: '20px',
+                                  fontSize: '11px',
                                   display: 'flex',
-                                  flexDirection: 'column',
-                                  cursor: 'pointer'
-                                }}
-                                onMouseEnter={(e) => e.currentTarget.style.opacity = '1'}
-                                onMouseLeave={(e) => e.currentTarget.style.opacity = '0'}>
-                                  <img 
-                                    src={filament.image2} 
-                                    alt={filament.name}
-                                    style={{
-                                      width: '100%',
-                                      height: '100%',
-                                      objectFit: 'cover',
-                                      position: 'absolute',
-                                      top: 0,
-                                      left: 0
-                                    }}
-                                  />
-                                  <div style={{
-                                    position: 'absolute',
-                                    bottom: 0,
-                                    left: 0,
-                                    right: 0,
-                                    background: 'linear-gradient(to top, rgba(0,0,0,0.7), transparent)',
-                                    padding: '12px',
-                                    textAlign: 'center'
-                                  }}>
-                                    <span style={{
-                                      color: 'white',
-                                      fontSize: '11px',
-                                      fontWeight: '500',
-                                      textShadow: '0 1px 2px rgba(0,0,0,0.5)'
-                                    }}>
-                                      {filament.name} • Vista detalle
-                                    </span>
-                                  </div>
-                                </div>
+                                  alignItems: 'center',
+                                  justifyContent: 'center',
+                                  boxShadow: '0 2px 4px rgba(0,0,0,0.1)'
+                                }}>✓</div>
                               )}
                             </div>
-                          ))}
-                        </div>
+                            <p style={{ fontSize: '11px', marginTop: '8px', color: '#4b5563', fontWeight: '500' }}>{f.name.split(' ').slice(0, 2).join(' ')}</p>
+                          </div>
+                        ))}
                       </div>
-                    ))}
+                    </div>
+                  )
+                })}
+                {filteredColors.length === 0 && (
+                  <div style={{ textAlign: 'center', padding: '60px', backgroundColor: '#f9fafb', borderRadius: '16px' }}>
+                    <p style={{ color: '#9ca3af' }}>No hay colores con estos filtros</p>
                   </div>
                 )}
               </div>
             )}
 
-            {/* Grid de resultados por similitud - CON 2 IMÁGENES */}
+            {/* Catálogo Completo - Tarjetas seleccionables */}
             {!showAllColors && (
               <>
-                <h2 style={{ fontSize: '24px', fontWeight: 'bold', marginBottom: '20px' }}>
-                  {selectedColors.length > 0 ? '🎯 Resultados similares' : '📦 Todos los filamentos'}
-                  <span style={{ fontSize: '14px', fontWeight: 'normal', color: '#6b7280', marginLeft: '12px' }}>{filteredFilaments.length} encontrados</span>
-                </h2>
-
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(350px, 1fr))', gap: '20px' }}>
+                <div style={{ marginBottom: '24px' }}>
+                  <h3 style={{ fontSize: '20px', fontWeight: '600', color: '#111827', marginBottom: '4px' }}>
+                    {selectedColors.length > 0 ? 'Mejores coincidencias' : 'Catálogo completo'}
+                  </h3>
+                  <p style={{ fontSize: '13px', color: '#6b7280' }}>
+                    {selectedColors.length > 0 ? `${filteredFilaments.length} resultados` : `Haz click en cualquier tarjeta para seleccionarlo (${selectedColors.length}/6)`}
+                  </p>
+                </div>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(320px, 1fr))', gap: '24px' }}>
                   {filteredFilaments.map((f, i) => (
                     <div key={i} style={{ 
                       backgroundColor: 'white', 
                       borderRadius: '16px', 
                       overflow: 'hidden', 
-                      boxShadow: '0 2px 8px rgba(0,0,0,0.08)',
-                      transition: 'transform 0.3s, box-shadow 0.3s',
-                      position: 'relative',
-                      cursor: 'pointer'
+                      border: isFilamentSelected(f) ? '2px solid #3b82f6' : '1px solid #f0f0f0',
+                      transition: 'all 0.3s ease',
+                      cursor: 'pointer',
+                      position: 'relative'
                     }}
+                    onClick={() => handleFilamentSelect(f)}
                     onMouseEnter={(e) => {
                       e.currentTarget.style.transform = 'translateY(-4px)'
-                      e.currentTarget.style.boxShadow = '0 12px 24px rgba(0,0,0,0.12)'
+                      e.currentTarget.style.boxShadow = '0 12px 24px -12px rgba(0,0,0,0.15)'
                     }}
                     onMouseLeave={(e) => {
                       e.currentTarget.style.transform = 'translateY(0)'
-                      e.currentTarget.style.boxShadow = '0 2px 8px rgba(0,0,0,0.08)'
+                      e.currentTarget.style.boxShadow = 'none'
                     }}>
-                      {/* Estado normal - muestra image1 */}
-                      <div className="card-normal" style={{ display: 'flex', padding: '20px', gap: '16px', transition: 'opacity 0.3s' }}>
-                        {f.image1 && (
-                          <img 
-                            src={f.image1} 
-                            alt={f.name} 
-                            style={{ 
-                              width: '80px', 
-                              height: '80px', 
-                              objectFit: 'cover', 
-                              borderRadius: '12px', 
-                              boxShadow: '0 2px 4px rgba(0,0,0,0.1)'
-                            }} 
-                          />
-                        )}
-                        <div style={{ flex: 1 }}>
-                          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'start', marginBottom: '8px' }}>
-                            <div>
-                              <h4 style={{ margin: '0 0 4px 0', fontSize: '16px', fontWeight: 'bold' }}>{f.name}</h4>
-                              <p style={{ fontSize: '12px', color: '#666', margin: 0 }}>{f.brand} • {f.tone}</p>
+                      {isFilamentSelected(f) && (
+                        <div style={{
+                          position: 'absolute',
+                          top: '12px',
+                          right: '12px',
+                          backgroundColor: '#3b82f6',
+                          color: 'white',
+                          borderRadius: '50%',
+                          width: '24px',
+                          height: '24px',
+                          display: 'flex',
+                          alignItems: 'center',
+                          justifyContent: 'center',
+                          zIndex: 10,
+                          fontSize: '12px',
+                          fontWeight: 'bold'
+                        }}>✓</div>
+                      )}
+                      <div style={{ display: 'flex', gap: '16px', padding: '16px' }}>
+                        <div style={{ position: 'relative', width: '80px', height: '80px', flexShrink: 0, borderRadius: '12px', overflow: 'hidden', backgroundColor: '#f9fafb' }}>
+                          {f.image1 && <img src={f.image1} alt={f.name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />}
+                          {f.image2 && (
+                            <div style={{
+                              position: 'absolute',
+                              top: 0,
+                              left: 0,
+                              width: '100%',
+                              height: '100%',
+                              backgroundColor: 'white',
+                              opacity: 0,
+                              transition: 'opacity 0.2s ease'
+                            }}
+                            onMouseEnter={(e) => e.currentTarget.style.opacity = '1'}
+                            onMouseLeave={(e) => e.currentTarget.style.opacity = '0'}>
+                              <img src={f.image2} alt={f.name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                             </div>
-                            <div style={{ width: '40px', height: '40px', backgroundColor: f.hex, borderRadius: '10px', border: '1px solid #ddd' }}></div>
+                          )}
+                        </div>
+                        <div style={{ flex: 1 }}>
+                          <div>
+                            <h4 style={{ fontSize: '15px', fontWeight: '600', marginBottom: '4px', color: '#111827' }}>{f.name}</h4>
+                            <p style={{ fontSize: '12px', color: '#6b7280', marginBottom: '8px' }}>{f.brand} • {f.tone}</p>
                           </div>
                           {selectedColors.length > 0 && f.similarity !== undefined && (
-                            <div style={{ margin: '12px 0' }}>
-                              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '4px' }}>
-                                <span style={{ fontSize: '11px', color: '#666' }}>Similitud promedio</span>
-                                <span style={{ fontSize: '12px', fontWeight: 'bold', color: '#2563eb' }}>{Math.round(f.similarity * 100)}%</span>
+                            <div style={{ marginBottom: '12px' }}>
+                              <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '11px', color: '#6b7280', marginBottom: '4px' }}>
+                                <span>Coincidencia</span>
+                                <span style={{ fontWeight: '600', color: '#3b82f6' }}>{Math.round(f.similarity * 100)}%</span>
                               </div>
-                              <div style={{ height: '4px', background: '#e5e7eb', borderRadius: '2px', overflow: 'hidden' }}>
-                                <div style={{ width: `${f.similarity * 100}%`, height: '100%', background: 'linear-gradient(90deg, #2563eb, #4f46e5)' }}></div>
+                              <div style={{ height: '3px', backgroundColor: '#f0f0f0', borderRadius: '2px', overflow: 'hidden' }}>
+                                <div style={{ width: `${f.similarity * 100}%`, height: '100%', backgroundColor: '#3b82f6' }}></div>
                               </div>
                             </div>
                           )}
-                          <p style={{ fontSize: '11px', fontFamily: 'monospace', margin: '8px 0', color: '#666' }}>HEX: {f.hex}</p>
-                          <a 
-                            href={f.link} 
-                            target="_blank" 
-                            rel="noopener noreferrer"
-                            style={{ 
-                              display: 'inline-block', 
-                              textAlign: 'center', 
-                              backgroundColor: '#1f2937', 
-                              color: 'white', 
-                              padding: '8px 16px', 
-                              borderRadius: '10px', 
-                              textDecoration: 'none', 
-                              fontSize: '12px', 
-                              fontWeight: '500',
-                              transition: 'background 0.2s'
-                            }}
-                            onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#2563eb'}
-                            onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#1f2937'}
-                          >
+                          <a href={f.link} target="_blank" rel="noopener noreferrer" style={{ display: 'inline-block', fontSize: '12px', fontWeight: '500', color: '#3b82f6', textDecoration: 'none' }}>
                             Ver producto →
                           </a>
                         </div>
                       </div>
-
-                      {/* Estado hover - muestra image2 ocupando toda la tarjeta */}
-                      {f.image2 && (
-                        <div className="card-hover" style={{
-                          position: 'absolute',
-                          top: 0,
-                          left: 0,
-                          right: 0,
-                          bottom: 0,
-                          backgroundColor: 'white',
-                          borderRadius: '16px',
-                          overflow: 'hidden',
-                          opacity: 0,
-                          transition: 'opacity 0.3s ease',
-                          zIndex: 10,
-                          display: 'flex',
-                          flexDirection: 'column',
-                          cursor: 'pointer'
-                        }}
-                        onMouseEnter={(e) => e.currentTarget.style.opacity = '1'}
-                        onMouseLeave={(e) => e.currentTarget.style.opacity = '0'}>
-                          <img 
-                            src={f.image2} 
-                            alt={f.name}
-                            style={{
-                              width: '100%',
-                              height: '100%',
-                              objectFit: 'cover',
-                              position: 'absolute',
-                              top: 0,
-                              left: 0
-                            }}
-                          />
-                          <div style={{
-                            position: 'absolute',
-                            bottom: 0,
-                            left: 0,
-                            right: 0,
-                            background: 'linear-gradient(to top, rgba(0,0,0,0.7), transparent)',
-                            padding: '12px',
-                            textAlign: 'center'
-                          }}>
-                            <span style={{
-                              color: 'white',
-                              fontSize: '12px',
-                              fontWeight: '500',
-                              textShadow: '0 1px 2px rgba(0,0,0,0.5)'
-                            }}>
-                              {f.name} • Ver detalle
-                            </span>
-                          </div>
-                        </div>
-                      )}
                     </div>
                   ))}
                 </div>
               </>
             )}
-
             {filteredFilaments.length === 0 && !showAllColors && (
-              <div style={{ textAlign: 'center', padding: '60px', background: 'white', borderRadius: '20px' }}>
+              <div style={{ textAlign: 'center', padding: '60px', backgroundColor: '#f9fafb', borderRadius: '16px' }}>
                 <p style={{ color: '#9ca3af' }}>No se encontraron filamentos con estos filtros</p>
-                <button onClick={resetFilters} style={{ marginTop: '16px', color: '#2563eb', background: 'none', border: 'none', cursor: 'pointer' }}>Limpiar filtros</button>
+                <button onClick={resetFilters} style={{ marginTop: '16px', color: '#3b82f6', background: 'none', border: 'none', cursor: 'pointer', fontSize: '13px' }}>Limpiar filtros</button>
+              </div>
+            )}
+          </div>
+
+          {/* Panel Derecho - Colores seleccionados (sticky, hasta 6) */}
+          <div style={{ width: '300px', flexShrink: 0, position: 'sticky', top: '80px' }}>
+            {selectedColors.length > 0 && (
+              <div style={{ backgroundColor: 'white', borderRadius: '16px', padding: '20px', border: '1px solid #f0f0f0' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px' }}>
+                  <h4 style={{ fontSize: '14px', fontWeight: '600', color: '#6b7280', margin: 0 }}>SELECCIONADOS ({selectedColors.length}/6)</h4>
+                  <button onClick={resetSelectedColors} style={{ fontSize: '12px', color: '#ef4444', background: 'none', border: 'none', cursor: 'pointer' }}>Limpiar todo</button>
+                </div>
+                {selectedColors.map((color, idx) => {
+                  const suggestions = selectedColorObjects[idx]?.suggestions || []
+                  const filament = suggestions[0]
+                  if (!filament) return null
+                  return (
+                    <div key={idx} style={{ marginBottom: '20px', paddingBottom: '16px', borderBottom: idx === selectedColors.length - 1 ? 'none' : '1px solid #f0f0f0' }}>
+                      <div style={{ display: 'flex', gap: '12px', alignItems: 'center' }}>
+                        <div style={{ 
+                          width: '50px', 
+                          height: '50px', 
+                          backgroundColor: filament.hex, 
+                          borderRadius: '10px',
+                          border: '1px solid #f0f0f0',
+                          flexShrink: 0
+                        }}></div>
+                        <div style={{ flex: 1 }}>
+                          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
+                            <div>
+                              <p style={{ fontSize: '13px', fontWeight: '600', marginBottom: '2px', color: '#111827' }}>{filament.name}</p>
+                              <p style={{ fontSize: '11px', color: '#6b7280', marginBottom: '4px' }}>{filament.brand} • {filament.tone}</p>
+                            </div>
+                            <button onClick={() => removeColor(color)} style={{ background: 'none', border: 'none', color: '#9ca3af', cursor: 'pointer', fontSize: '14px' }}>✕</button>
+                          </div>
+                          <p style={{ fontSize: '11px', fontWeight: '600', color: '#3b82f6', marginBottom: '8px' }}>{Math.round(filament.similarity * 100)}% match</p>
+                          <a 
+                            href={filament.link} 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            style={{ 
+                              display: 'inline-block', 
+                              fontSize: '11px', 
+                              fontWeight: '500', 
+                              color: '#3b82f6', 
+                              textDecoration: 'none' 
+                            }}
+                            onClick={(e) => e.stopPropagation()}
+                          >
+                            Ver producto →
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  )
+                })}
+                {selectedColors.length === 6 && <p style={{ fontSize: '11px', color: '#f59e0b', textAlign: 'center', marginTop: '12px' }}>Máximo 6 colores alcanzado</p>}
+              </div>
+            )}
+            {selectedColors.length === 0 && (
+              <div style={{ backgroundColor: '#f9fafb', borderRadius: '16px', padding: '32px 20px', textAlign: 'center', border: '1px solid #f0f0f0' }}>
+                <p style={{ color: '#9ca3af', fontSize: '13px', margin: 0 }}>✨ Selecciona un color<br/>desde la paleta o el catálogo</p>
               </div>
             )}
           </div>
@@ -681,16 +610,8 @@ const sortedByHex = [...filaments].sort((a, b) =>
       </div>
 
       {/* Footer */}
-      <footer style={{
-        borderTop: '1px solid #e5e7eb',
-        marginTop: '48px',
-        padding: '24px',
-        textAlign: 'center',
-        background: 'white'
-      }}>
-        <p style={{ fontSize: '13px', color: '#9ca3af', margin: 0 }}>
-          Color matcher by <strong style={{ color: '#6366f1' }}>giucancode</strong>
-        </p>
+      <footer style={{ borderTop: '1px solid #f0f0f0', marginTop: '60px', padding: '24px', textAlign: 'center' }}>
+        <p style={{ fontSize: '12px', color: '#9ca3af' }}>Color matcher by <strong style={{ color: '#3b82f6' }}>giucancode</strong></p>
       </footer>
 
       <style>{`

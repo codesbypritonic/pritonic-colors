@@ -1,12 +1,274 @@
 [
   {
-    "name": "Sky Blue",
-    "hex": "#69A8FF",
-    "type": "PLA",
-    "brand": "BambuLab",
+    "name": "Sesame Black",
+    "hex": "#2B2B2B",
+    "type": "PLA+",
+    "brand": "Pritonic",
     "tone": "Mate",
-    "image1": "/images/bambulab-sky-blue-matte.jpg",
-    "image2": "/images/bambulab-sky-blue-roll.jpg",
-    "link": "https://bambulab.com/pla/sky-blue"
+    "link": "https://www.pritonic.com/products/833/filamento-pla-matte-pritonic-1-kg-175-mm-acabado-mate-y-funcionalidad"
+  },
+  {
+    "name": "Sakura Pink",
+    "hex": "#F6B7C8",
+    "type": "PLA+",
+    "brand": "Pritonic",
+    "tone": "Mate",
+    "link": "https://www.pritonic.com/products/833/filamento-pla-matte-pritonic-1-kg-175-mm-acabado-mate-y-funcionalidad"
+  },
+  {
+    "name": "Peach Pink",
+    "hex": "#F6C1A7",
+    "type": "PLA+",
+    "brand": "Pritonic",
+    "tone": "Mate",
+    "link": "https://www.pritonic.com/products/833/filamento-pla-matte-pritonic-1-kg-175-mm-acabado-mate-y-funcionalidad"
+  },
+  {
+    "name": "Mint Blue",
+    "hex": "#8FD6D1",
+    "type": "PLA+",
+    "brand": "Pritonic",
+    "tone": "Mate",
+    "link": "https://www.pritonic.com/products/833/filamento-pla-matte-pritonic-1-kg-175-mm-acabado-mate-y-funcionalidad"
+  },
+  {
+    "name": "Matcha Green",
+    "hex": "#98A86F",
+    "type": "PLA+",
+    "brand": "Pritonic",
+    "tone": "Mate",
+    "link": "https://www.pritonic.com/products/833/filamento-pla-matte-pritonic-1-kg-175-mm-acabado-mate-y-funcionalidad"
+  },
+  {
+    "name": "Malt Green",
+    "hex": "#7C8B5A",
+    "type": "PLA+",
+    "brand": "Pritonic",
+    "tone": "Mate",
+    "link": "https://www.pritonic.com/products/833/filamento-pla-matte-pritonic-1-kg-175-mm-acabado-mate-y-funcionalidad"
+  },
+  {
+    "name": "Lemon Yellow",
+    "hex": "#F7E45C",
+    "type": "PLA+",
+    "brand": "Pritonic",
+    "tone": "Mate",
+    "link": "https://www.pritonic.com/products/833/filamento-pla-matte-pritonic-1-kg-175-mm-acabado-mate-y-funcionalidad"
+  },
+  {
+    "name": "Latte Brown",
+    "hex": "#A67B5B",
+    "type": "PLA+",
+    "brand": "Pritonic",
+    "tone": "Mate",
+    "link": "https://www.pritonic.com/products/833/filamento-pla-matte-pritonic-1-kg-175-mm-acabado-mate-y-funcionalidad"
+  },
+  {
+    "name": "Durian Yellow",
+    "hex": "#D9B85F",
+    "type": "PLA+",
+    "brand": "Pritonic",
+    "tone": "Mate",
+    "link": "https://www.pritonic.com/products/833/filamento-pla-matte-pritonic-1-kg-175-mm-acabado-mate-y-funcionalidad"
+  },
+  {
+    "name": "Coconut Milk White",
+    "hex": "#F4F1E8",
+    "type": "PLA+",
+    "brand": "Pritonic",
+    "tone": "Mate",
+    "link": "https://www.pritonic.com/products/833/filamento-pla-matte-pritonic-1-kg-175-mm-acabado-mate-y-funcionalidad"
+  },
+  {
+    "name": "Brown",
+    "hex": "#6B4A2E",
+    "type": "PLA+",
+    "brand": "Pritonic",
+    "tone": "Mate",
+    "link": "https://www.pritonic.com/products/833/filamento-pla-matte-pritonic-1-kg-175-mm-acabado-mate-y-funcionalidad"
+  },
+  {
+    "name": "Ash Gray",
+    "hex": "#9A9A9A",
+    "type": "PLA+",
+    "brand": "Pritonic",
+    "tone": "Mate",
+    "link": "https://www.pritonic.com/products/833/filamento-pla-matte-pritonic-1-kg-175-mm-acabado-mate-y-funcionalidad"
+  },
+  {
+    "name": "Basic Yellow",
+    "hex": "#FFD400",
+    "type": "PLA+",
+    "brand": "Pritonic",
+    "tone": "Brillante",
+    "link": "https://www.pritonic.com/products/831/filamento-pla-pritonic-1-kg-175-mm-resistente-estable-y-facil-de-imprimir"
+  },
+  {
+    "name": "Basic White",
+    "hex": "#FFFFFF",
+    "type": "PLA+",
+    "brand": "Pritonic",
+    "tone": "Brillante",
+    "link": "https://www.pritonic.com/products/831/filamento-pla-pritonic-1-kg-175-mm-resistente-estable-y-facil-de-imprimir"
+  },
+  {
+    "name": "Basic Violet",
+    "hex": "#7D4BC6",
+    "type": "PLA+",
+    "brand": "Pritonic",
+    "tone": "Brillante",
+    "link": "https://www.pritonic.com/products/831/filamento-pla-pritonic-1-kg-175-mm-resistente-estable-y-facil-de-imprimir"
+  },
+  {
+    "name": "Basic Sky Blue",
+    "hex": "#69A8FF",
+    "type": "PLA+",
+    "brand": "Pritonic",
+    "tone": "Brillante",
+    "link": "https://www.pritonic.com/products/831/filamento-pla-pritonic-1-kg-175-mm-resistente-estable-y-facil-de-imprimir"
+  },
+  {
+    "name": "Basic Skin",
+    "hex": "#E8C7A2",
+    "type": "PLA+",
+    "brand": "Pritonic",
+    "tone": "Brillante",
+    "link": "https://www.pritonic.com/products/831/filamento-pla-pritonic-1-kg-175-mm-resistente-estable-y-facil-de-imprimir"
+  },
+  {
+    "name": "Basic Red",
+    "hex": "#D72631",
+    "type": "PLA+",
+    "brand": "Pritonic",
+    "tone": "Brillante",
+    "link": "https://www.pritonic.com/products/831/filamento-pla-pritonic-1-kg-175-mm-resistente-estable-y-facil-de-imprimir"
+  },
+  {
+    "name": "Basic Pink",
+    "hex": "#F58BB0",
+    "type": "PLA+",
+    "brand": "Pritonic",
+    "tone": "Brillante",
+    "link": "https://www.pritonic.com/products/831/filamento-pla-pritonic-1-kg-175-mm-resistente-estable-y-facil-de-imprimir"
+  },
+  {
+    "name": "Basic Pine Green",
+    "hex": "#2E5E4E",
+    "type": "PLA+",
+    "brand": "Pritonic",
+    "tone": "Brillante",
+    "link": "https://www.pritonic.com/products/831/filamento-pla-pritonic-1-kg-175-mm-resistente-estable-y-facil-de-imprimir"
+  },
+  {
+    "name": "Orchid Purple",
+    "hex": "#9B59B6",
+    "type": "PLA+",
+    "brand": "Pritonic",
+    "tone": "Brillante",
+    "link": "https://www.pritonic.com/products/831/filamento-pla-pritonic-1-kg-175-mm-resistente-estable-y-facil-de-imprimir"
+  },
+  {
+    "name": "Basic Orange",
+    "hex": "#F28C28",
+    "type": "PLA+",
+    "brand": "Pritonic",
+    "tone": "Brillante",
+    "link": "https://www.pritonic.com/products/831/filamento-pla-pritonic-1-kg-175-mm-resistente-estable-y-facil-de-imprimir"
+  },
+  {
+    "name": "Olive Green",
+    "hex": "#708238",
+    "type": "PLA+",
+    "brand": "Pritonic",
+    "tone": "Brillante",
+    "link": "https://www.pritonic.com/products/831/filamento-pla-pritonic-1-kg-175-mm-resistente-estable-y-facil-de-imprimir"
+  },
+  {
+    "name": "Magenta",
+    "hex": "#D1007A",
+    "type": "PLA+",
+    "brand": "Pritonic",
+    "tone": "Brillante",
+    "link": "https://www.pritonic.com/products/831/filamento-pla-pritonic-1-kg-175-mm-resistente-estable-y-facil-de-imprimir"
+  },
+  {
+    "name": "Basic Grey",
+    "hex": "#8B8C8E",
+    "type": "PLA+",
+    "brand": "Pritonic",
+    "tone": "Brillante",
+    "link": "https://www.pritonic.com/products/831/filamento-pla-pritonic-1-kg-175-mm-resistente-estable-y-facil-de-imprimir"
+  },
+  {
+    "name": "Basic Green",
+    "hex": "#3FA34D",
+    "type": "PLA+",
+    "brand": "Pritonic",
+    "tone": "Brillante",
+    "link": "https://www.pritonic.com/products/831/filamento-pla-pritonic-1-kg-175-mm-resistente-estable-y-facil-de-imprimir"
+  },
+  {
+    "name": "Dark Green",
+    "hex": "#1F4D36",
+    "type": "PLA+",
+    "brand": "Pritonic",
+    "tone": "Brillante",
+    "link": "https://www.pritonic.com/products/831/filamento-pla-pritonic-1-kg-175-mm-resistente-estable-y-facil-de-imprimir"
+  },
+  {
+    "name": "Dark Gray",
+    "hex": "#55585C",
+    "type": "PLA+",
+    "brand": "Pritonic",
+    "tone": "Brillante",
+    "link": "https://www.pritonic.com/products/831/filamento-pla-pritonic-1-kg-175-mm-resistente-estable-y-facil-de-imprimir"
+  },
+  {
+    "name": "Cyan",
+    "hex": "#00B7C7",
+    "type": "PLA+",
+    "brand": "Pritonic",
+    "tone": "Brillante",
+    "link": "https://www.pritonic.com/products/831/filamento-pla-pritonic-1-kg-175-mm-resistente-estable-y-facil-de-imprimir"
+  },
+  {
+    "name": "Chocolate",
+    "hex": "#5A3825",
+    "type": "PLA+",
+    "brand": "Pritonic",
+    "tone": "Brillante",
+    "link": "https://www.pritonic.com/products/831/filamento-pla-pritonic-1-kg-175-mm-resistente-estable-y-facil-de-imprimir"
+  },
+  {
+    "name": "Basic Brown",
+    "hex": "#6F4E37",
+    "type": "PLA+",
+    "brand": "Pritonic",
+    "tone": "Brillante",
+    "link": "https://www.pritonic.com/products/831/filamento-pla-pritonic-1-kg-175-mm-resistente-estable-y-facil-de-imprimir"
+  },
+  {
+    "name": "Basic Blue",
+    "hex": "#1F5EFF",
+    "type": "PLA+",
+    "brand": "Pritonic",
+    "tone": "Brillante",
+    "link": "https://www.pritonic.com/products/831/filamento-pla-pritonic-1-kg-175-mm-resistente-estable-y-facil-de-imprimir"
+  },
+  {
+    "name": "Basic Black",
+    "hex": "#111111",
+    "type": "PLA+",
+    "brand": "Pritonic",
+    "tone": "Brillante",
+    "link": "https://www.pritonic.com/products/831/filamento-pla-pritonic-1-kg-175-mm-resistente-estable-y-facil-de-imprimir"
+  },
+  {
+    "name": "Apple Green",
+    "hex": "#7ED957",
+    "type": "PLA+",
+    "brand": "Pritonic",
+    "tone": "Brillante",
+    "link": "https://www.pritonic.com/products/831/filamento-pla-pritonic-1-kg-175-mm-resistente-estable-y-facil-de-imprimir"
   }
 ]
